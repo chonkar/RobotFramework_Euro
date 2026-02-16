@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.4.1 (Python 3.14.0 on win32)" generated="2026-02-16T11:53:06.283938" rpa="false" schemaversion="5">
+<suite id="s1" name="Test" source="D:\EuroControl\automation\test.robot">
+<test id="s1-t1" name="AaseyaClaims" line="26">
+<kw name="Login To Application" type="SETUP">
+<kw name="OpenTheBrowser" owner="resource">
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2026-02-16T11:53:06.552466" level="INFO">${options} = &lt;selenium.webdriver.firefox.options.Options object at 0x0000023915D3B380&gt;</msg>
+<var>${options}</var>
+<arg>sys.modules['selenium.webdriver'].FirefoxOptions() if 'selenium.webdriver' in sys.modules else __import__('selenium.webdriver').webdriver.FirefoxOptions()</arg>
+<arg>sys</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2026-02-16T11:53:06.551875" elapsed="0.000640"/>
+</kw>
+<kw name="Call Method" owner="BuiltIn">
+<arg>${options}</arg>
+<arg>add_argument</arg>
+<arg>--disable-popup-blocking</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" start="2026-02-16T11:53:06.552726" elapsed="0.000313"/>
+</kw>
+<kw name="Call Method" owner="BuiltIn">
+<arg>${options}</arg>
+<arg>add_argument</arg>
+<arg>--allow-running-insecure-content</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" start="2026-02-16T11:53:06.553163" elapsed="0.000202"/>
+</kw>
+<kw name="Call Method" owner="BuiltIn">
+<arg>${options}</arg>
+<arg>add_argument</arg>
+<arg>--disable-web-security</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" start="2026-02-16T11:53:06.553453" elapsed="0.000184"/>
+</kw>
+<kw name="Call Method" owner="BuiltIn">
+<arg>${options}</arg>
+<arg>add_argument</arg>
+<arg>--ignore-certificate-errors</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" start="2026-02-16T11:53:06.553727" elapsed="0.000162"/>
+</kw>
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2026-02-16T11:53:06.554193" level="INFO">Opening browser 'Firefox' to base url 'http://10.13.1.180/ais/'.</msg>
+<msg time="2026-02-16T11:53:34.834685" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-7.png"&gt;&lt;img src="selenium-screenshot-7.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg time="2026-02-16T11:53:34.835104" level="FAIL">WebDriverException: Message: Reached error page: about:neterror?e=netTimeout&amp;u=http%3A//10.13.1.180/ais/&amp;c=UTF-8&amp;d=The%20server%20at%2010.13.1.180%20is%20taking%20too%20long%20to%20respond.
+Stacktrace:
+RemoteError@chrome://remote/content/shared/RemoteError.sys.mjs:8:8
+WebDriverError@chrome://remote/content/shared/webdriver/Errors.sys.mjs:188:5
+UnknownError@chrome://remote/content/shared/webdriver/Errors.sys.mjs:752:5
+checkReadyState@chrome://remote/content/marionette/navigate.sys.mjs:59:24
+onNavigation@chrome://remote/content/marionette/navigate.sys.mjs:327:39
+emit@resource://gre/modules/EventEmitter.sys.mjs:154:20
+receiveMessage@chrome://remote/content/marionette/actors/MarionetteEventsParent.sys.mjs:33:25
+</msg>
+<arg>${url}</arg>
+<arg>${browser}</arg>
+<arg>options=${options}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="FAIL" start="2026-02-16T11:53:06.553981" elapsed="28.309061">WebDriverException: Message: Reached error page: about:neterror?e=netTimeout&amp;u=http%3A//10.13.1.180/ais/&amp;c=UTF-8&amp;d=The%20server%20at%2010.13.1.180%20is%20taking%20too%20long%20to%20respond.
+Stacktrace:
+RemoteError@chrome://remote/content/shared/RemoteError.sys.mjs:8:8
+WebDriverError@chrome://remote/content/shared/webdriver/Errors.sys.mjs:188:5
+UnknownError@chrome://remote/content/shared/webdriver/Errors.sys.mjs:752:5
+checkReadyState@chrome://remote/content/marionette/navigate.sys.mjs:59:24
+onNavigation@chrome://remote/content/marionette/navigate.sys.mjs:327:39
+emit@resource://gre/modules/EventEmitter.sys.mjs:154:20
+receiveMessage@chrome://remote/content/marionette/actors/MarionetteEventsParent.sys.mjs:33:25
+</status>
+</kw>
+<status status="FAIL" start="2026-02-16T11:53:06.551274" elapsed="28.312148">WebDriverException: Message: Reached error page: about:neterror?e=netTimeout&amp;u=http%3A//10.13.1.180/ais/&amp;c=UTF-8&amp;d=The%20server%20at%2010.13.1.180%20is%20taking%20too%20long%20to%20respond.
+Stacktrace:
+RemoteError@chrome://remote/content/shared/RemoteError.sys.mjs:8:8
+WebDriverError@chrome://remote/content/shared/webdriver/Errors.sys.mjs:188:5
+UnknownError@chrome://remote/content/shared/webdriver/Errors.sys.mjs:752:5
+checkReadyState@chrome://remote/content/marionette/navigate.sys.mjs:59:24
+onNavigation@chrome://remote/content/marionette/navigate.sys.mjs:327:39
+emit@resource://gre/modules/EventEmitter.sys.mjs:154:20
+receiveMessage@chrome://remote/content/marionette/actors/MarionetteEventsParent.sys.mjs:33:25
+</status>
+</kw>
+<kw name="MaximizeBrowserWindow" owner="claim_UserDefinedKeywords">
+<status status="NOT RUN" start="2026-02-16T11:53:34.863841" elapsed="0.000086"/>
+</kw>
+<kw name="ClickPreClaimAuthorization" owner="landingPage">
+<status status="NOT RUN" start="2026-02-16T11:53:34.864178" elapsed="0.000067"/>
+</kw>
+<kw name="EnterUsernameAndPassword" owner="Loginpage">
+<arg>${username}</arg>
+<arg>${password}</arg>
+<status status="NOT RUN" start="2026-02-16T11:53:34.864980" elapsed="0.000100"/>
+</kw>
+<status status="FAIL" start="2026-02-16T11:53:06.550826" elapsed="28.314499">WebDriverException: Message: Reached error page: about:neterror?e=netTimeout&amp;u=http%3A//10.13.1.180/ais/&amp;c=UTF-8&amp;d=The%20server%20at%2010.13.1.180%20is%20taking%20too%20long%20to%20respond.
+Stacktrace:
+RemoteError@chrome://remote/content/shared/RemoteError.sys.mjs:8:8
+WebDriverError@chrome://remote/content/shared/webdriver/Errors.sys.mjs:188:5
+UnknownError@chrome://remote/content/shared/webdriver/Errors.sys.mjs:752:5
+checkReadyState@chrome://remote/content/marionette/navigate.sys.mjs:59:24
+onNavigation@chrome://remote/content/marionette/navigate.sys.mjs:327:39
+emit@resource://gre/modules/EventEmitter.sys.mjs:154:20
+receiveMessage@chrome://remote/content/marionette/actors/MarionetteEventsParent.sys.mjs:33:25
+</status>
+</kw>
+<kw name="Finish TestCase" type="TEARDOWN">
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2026-02-16T11:53:34.866802" elapsed="3.481496"/>
+</kw>
+<status status="PASS" start="2026-02-16T11:53:34.866191" elapsed="3.482417"/>
+</kw>
+<status status="FAIL" start="2026-02-16T11:53:06.550135" elapsed="31.798911">Setup failed:
+WebDriverException: Message: Reached error page: about:neterror?e=netTimeout&amp;u=http%3A//10.13.1.180/ais/&amp;c=UTF-8&amp;d=The%20server%20at%2010.13.1.180%20is%20taking%20too%20long%20to%20respond.
+Stacktrace:
+RemoteError@chrome://remote/content/shared/RemoteError.sys.mjs:8:8
+WebDriverError@chrome://remote/content/shared/webdriver/Errors.sys.mjs:188:5
+UnknownError@chrome://remote/content/shared/webdriver/Errors.sys.mjs:752:5
+checkReadyState@chrome://remote/content/marionette/navigate.sys.mjs:59:24
+onNavigation@chrome://remote/content/marionette/navigate.sys.mjs:327:39
+emit@resource://gre/modules/EventEmitter.sys.mjs:154:20
+receiveMessage@chrome://remote/content/marionette/actors/MarionetteEventsParent.sys.mjs:33:25
+</status>
+</test>
+<status status="FAIL" start="2026-02-16T11:53:06.287061" elapsed="32.064655"/>
+</suite>
+<statistics>
+<total>
+<stat pass="0" fail="1" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat name="Test" id="s1" pass="0" fail="1" skip="0">Test</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

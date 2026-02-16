@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.4.1 (Python 3.14.0 on win32)" generated="2026-02-12T14:51:09.013777" rpa="false" schemaversion="5">
+<suite id="s1" name="Test" source="D:\EuroControl\automation\test.robot">
+<test id="s1-t1" name="AaseyaClaims" line="18">
+<kw name="OpenTheBrowser" owner="resource" type="SETUP">
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2026-02-12T14:51:09.212871" level="INFO">${options} = &lt;selenium.webdriver.firefox.options.Options object at 0x000001679069ACF0&gt;</msg>
+<var>${options}</var>
+<arg>sys.modules['selenium.webdriver'].FirefoxOptions() if 'selenium.webdriver' in sys.modules else __import__('selenium.webdriver').webdriver.FirefoxOptions()</arg>
+<arg>sys</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2026-02-12T14:51:09.212441" elapsed="0.000463"/>
+</kw>
+<kw name="Call Method" owner="BuiltIn">
+<arg>${options}</arg>
+<arg>add_argument</arg>
+<arg>--disable-popup-blocking</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" start="2026-02-12T14:51:09.213021" elapsed="0.000220"/>
+</kw>
+<kw name="Call Method" owner="BuiltIn">
+<arg>${options}</arg>
+<arg>add_argument</arg>
+<arg>--allow-running-insecure-content</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" start="2026-02-12T14:51:09.213325" elapsed="0.000158"/>
+</kw>
+<kw name="Call Method" owner="BuiltIn">
+<arg>${options}</arg>
+<arg>add_argument</arg>
+<arg>--disable-web-security</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" start="2026-02-12T14:51:09.213551" elapsed="0.000142"/>
+</kw>
+<kw name="Call Method" owner="BuiltIn">
+<arg>${options}</arg>
+<arg>add_argument</arg>
+<arg>--ignore-certificate-errors</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" start="2026-02-12T14:51:09.213754" elapsed="0.000144"/>
+</kw>
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2026-02-12T14:51:09.214157" level="INFO">Opening browser 'Firefox' to base url 'http://10.13.1.180/ais/'.</msg>
+<arg>${url}</arg>
+<arg>${browser}</arg>
+<arg>options=${options}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2026-02-12T14:51:09.213985" elapsed="8.021749"/>
+</kw>
+<status status="PASS" start="2026-02-12T14:51:09.211943" elapsed="8.024034"/>
+</kw>
+<kw name="AISHealtCareLoginPage">
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2026-02-12T14:51:17.237536" elapsed="0.009302"/>
+</kw>
+<kw name="Set Selenium Implicit Wait" owner="SeleniumLibrary">
+<arg>${time}</arg>
+<doc>Sets the implicit wait value used by Selenium.</doc>
+<status status="PASS" start="2026-02-12T14:51:17.247076" elapsed="0.015237"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2026-02-12T14:51:17.263421" level="INFO">Clicking button 'Pre-Claim Authorization'.</msg>
+<arg>Pre-Claim Authorization</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2026-02-12T14:51:17.262677" elapsed="5.294480"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-02-12T14:51:22.558208" level="INFO">Typing text 'claimantqa@gmail.com' into text field 'id:_r_6_'.</msg>
+<arg>id:_r_6_</arg>
+<arg>${username}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-02-12T14:51:22.557627" elapsed="0.108965"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-02-12T14:51:22.667531" level="INFO">Typing text 'Camunda@123' into text field 'id:_r_7_'.</msg>
+<arg>id:_r_7_</arg>
+<arg>${password}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-02-12T14:51:22.667014" elapsed="0.057629"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2026-02-12T14:51:27.725516" level="INFO">Slept 5 seconds.</msg>
+<arg>${time}</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2026-02-12T14:51:22.724847" elapsed="5.000912"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2026-02-12T14:51:27.726620" level="INFO">Clicking button 'LOGIN'.</msg>
+<arg>LOGIN</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2026-02-12T14:51:27.726132" elapsed="5.290847"/>
+</kw>
+<arg>${username}</arg>
+<arg>${password}</arg>
+<status status="PASS" start="2026-02-12T14:51:17.236757" elapsed="15.780538"/>
+</kw>
+<kw name="RegisterPre-ClaimApproval">
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2026-02-12T14:51:38.020007" level="INFO">Slept 5 seconds.</msg>
+<arg>${time}</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2026-02-12T14:51:33.018872" elapsed="5.001391"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-02-12T14:51:38.021286" level="INFO">Typing text 'John Doe' into text field 'id:_r_a_'.</msg>
+<arg>id:_r_a_</arg>
+<arg>John Doe</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-02-12T14:51:38.020634" elapsed="0.060915"/>
+</kw>
+<kw name="Select From List By Value" owner="SeleniumLibrary">
+<msg time="2026-02-12T14:51:38.082338" level="INFO">Selecting options from selection list 'id:_r_b_' by value Self.</msg>
+<msg time="2026-02-12T14:51:38.172969" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-4.png"&gt;&lt;img src="selenium-screenshot-4.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg time="2026-02-12T14:51:38.173373" level="FAIL">List with locator 'id:_r_b_' not found.</msg>
+<arg>id:_r_b_</arg>
+<arg>Self</arg>
+<doc>Selects options from selection list ``locator`` by ``values``.</doc>
+<status status="FAIL" start="2026-02-12T14:51:38.081901" elapsed="0.105571">List with locator 'id:_r_b_' not found.</status>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<arg>id:_r_c_</arg>
+<arg>1321323</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="NOT RUN" start="2026-02-12T14:51:38.188026" elapsed="0.000204"/>
+</kw>
+<status status="FAIL" start="2026-02-12T14:51:33.018238" elapsed="5.170337">List with locator 'id:_r_b_' not found.</status>
+</kw>
+<kw name="Close All Browsers" owner="SeleniumLibrary" type="TEARDOWN">
+<doc>Closes all open browsers and resets the browser cache.</doc>
+<status status="PASS" start="2026-02-12T14:51:38.189501" elapsed="2.899236"/>
+</kw>
+<status status="FAIL" start="2026-02-12T14:51:09.211142" elapsed="31.878376">List with locator 'id:_r_b_' not found.</status>
+</test>
+<status status="FAIL" start="2026-02-12T14:51:09.016237" elapsed="32.076367"/>
+</suite>
+<statistics>
+<total>
+<stat pass="0" fail="1" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat name="Test" id="s1" pass="0" fail="1" skip="0">Test</stat>
+</suite>
+</statistics>
+<errors>
+<msg time="2026-02-12T14:51:09.203727" level="ERROR">Error in file 'D:\EuroControl\automation\test.robot' on line 3: Importing library 'SelfhealingAgents' failed: ModuleNotFoundError: No module named 'SelfhealingAgents'
+Traceback (most recent call last):
+  None
+PYTHONPATH:
+  D:\EuroControl
+  C:\Users\kavita.chonkar\AppData\Local\Python\pythoncore-3.14-64\python314.zip
+  C:\Users\kavita.chonkar\AppData\Local\Python\pythoncore-3.14-64\DLLs
+  C:\Users\kavita.chonkar\AppData\Local\Python\pythoncore-3.14-64\Lib
+  C:\Users\kavita.chonkar\AppData\Local\Python\pythoncore-3.14-64
+  D:\LLM\Localllm\.venv
+  D:\LLM\Localllm\.venv\Lib\site-packages
+  D:\LLM\Localllm\.venv\Lib\site-packages\win32
+  D:\LLM\Localllm\.venv\Lib\site-packages\win32\lib
+  D:\LLM\Localllm\.venv\Lib\site-packages\Pythonwin</msg>
+<msg time="2026-02-12T14:51:09.207593" level="ERROR">Error in file 'D:\EuroControl\automation\test.robot' on line 4: Importing library 'D:\EuroControl\automation\fix_loop.py' failed: ModuleNotFoundError: No module named 'nest_asyncio'
+Traceback (most recent call last):
+  File "D:\EuroControl\automation\fix_loop.py", line 1, in &lt;module&gt;
+    import nest_asyncio
+PYTHONPATH:
+  D:\EuroControl\automation
+  D:\EuroControl
+  C:\Users\kavita.chonkar\AppData\Local\Python\pythoncore-3.14-64\python314.zip
+  C:\Users\kavita.chonkar\AppData\Local\Python\pythoncore-3.14-64\DLLs
+  C:\Users\kavita.chonkar\AppData\Local\Python\pythoncore-3.14-64\Lib
+  C:\Users\kavita.chonkar\AppData\Local\Python\pythoncore-3.14-64
+  D:\LLM\Localllm\.venv
+  D:\LLM\Localllm\.venv\Lib\site-packages
+  D:\LLM\Localllm\.venv\Lib\site-packages\win32
+  D:\LLM\Localllm\.venv\Lib\site-packages\win32\lib
+  D:\LLM\Localllm\.venv\Lib\site-packages\Pythonwin</msg>
+</errors>
+</robot>

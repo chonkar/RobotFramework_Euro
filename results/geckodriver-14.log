@@ -1,0 +1,27 @@
+1770892749543	geckodriver	INFO	Listening on 127.0.0.1:62514
+1770892752633	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "--disable-popup-blocking" "--allow-running ... emote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\KAVITA~1.CHO\\AppData\\Local\\Temp\\rust_mozprofilemuOmcD"
+console.warn: services.settings: Ignoring preference override of remote settings server
+console.warn: services.settings: Allow by setting MOZ_REMOTE_SETTINGS_DEVTOOLS=1 in the environment
+1770892753288	Marionette	INFO	Marionette enabled
+Dynamically enable window occlusion 0
+console.error: "Warning: unrecognized command line flag" "-disable-popup-blocking"
+console.error: "Warning: unrecognized command line flag" "-disable-web-security"
+1770892754060	Marionette	INFO	Listening on port 61745
+WebDriver BiDi listening on ws://127.0.0.1:62515
+Read port: 61745
+1770892754333	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+console.error: services.settings: 
+  main/partitioning-exempt-urls Signature failed  InvalidSignatureError: Invalid content signature (main/partitioning-exempt-urls) using 'remote-settings.content-signature.mozilla.org-2026-03-28-10-13-31.chain'
+console.error: services.settings: 
+  main/partitioning-exempt-urls local data was corrupted
+console.warn: services.settings: main/partitioning-exempt-urls Signature verified failed. Retry from scratch
+console.error: services.settings: 
+  main/partitioning-exempt-urls Signature failed again InvalidSignatureError: Invalid content signature (main/partitioning-exempt-urls) using 'remote-settings.content-signature.mozilla.org-2026-03-28-10-13-31.chain'
+console.error: (new InvalidSignatureError("Invalid content signature (main/partitioning-exempt-urls) using 'remote-settings.content-signature.mozilla.org-2026-03-28-10-13-31.chain'", "resource://services-settings/RemoteSettingsClient.sys.mjs", 165))
+console.warn: LoginRecipes: "Falling back to a synchronous message for: http://10.13.1.180."
+console.warn: LoginRecipes: "Falling back to a synchronous message for: http://10.13.1.180."
+1770892763312	Marionette	INFO	Stopped listening on port 61745
+JavaScript warning: http://10.13.1.180/ais/assets/index-Ck66B0zW.js, line 9: Script terminated by timeout at:
+Kf@http://10.13.1.180/ais/assets/index-Ck66B0zW.js:9:28563
+
+Dynamically enable window occlusion 1

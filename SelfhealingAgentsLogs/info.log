@@ -1,0 +1,1126 @@
+2026-02-11 18:44:36,454 - SelfhealingReports - INFO - Calling function: kickoff_healing with args: (robot.running.Keyword(name='Select From List By Value', args=('id:_r_b_', 'Self'), assign=()), robot.result.Keyword(name='Select From List By Value', args=('id:_r_b_', 'Self'), assign=())), kwargs: {'cfg': Cfg(enable_self_healing=True, use_llm_for_locator_generation=True, max_retries=3, orchestrator_agent_provider='openai', orchestrator_agent_model='gpt-4o-mini', orchestrator_agent_temperature=0.1, locator_agent_provider='openai', locator_agent_model='gpt-4o-mini', locator_agent_temperature=0.1, request_limit=5, total_tokens_limit=6000, locator_type='css', report_directory=None, is_rerun_activated=False, azure_api_key='<REDACTED API Key>', azure_api_version=None, azure_endpoint='<REDACTED API Endpoint>', openai_api_key='<REDACTED API Key>', base_url='<REDACTED BASE URL>', litellm_api_key='<REDACTED API Key>'), 'tried_locator_memory': []}
+2026-02-11 18:44:36,457 - SelfhealingReports - INFO - Calling function: get_context_payload with args: (robot.running.Keyword(name='Select From List By Value', args=('id:_r_b_', 'Self'), assign=()), robot.result.Keyword(name='Select From List By Value', args=('id:_r_b_', 'Self'), assign=()), <SelfhealingAgents.self_healing_system.context_retrieving.library_dom_utils.selenium_dom_utils.SeleniumDomUtils object at 0x000001B8E0B71FD0>), kwargs: {}
+2026-02-11 18:44:36,492 - SelfhealingReports - INFO - Function get_context_payload returned: robot_code_line='Select From List By Value id:_r_b_ Self' error_msg="List with locator 'id:_r_b_' not found." dom_tree='<body>\n<div id="root"><div class="MuiBox-root css-1kdgnzq"><div class="MuiBox-root css-1pd736a"><img/><div class="MuiBox-root css-1u5ih8"><p class="MuiTypography-root MuiTypography-body1 css-1tkzlsh">Reliable health coverage for you and your family</p><p class="MuiTypography-root MuiTypography-body1 css-de2l7a">Our digital-first approach ensures that your health and claims are prioritized with professional care and minimal friction</p></div></div><div class="MuiBox-root css-qezfun"><div class="MuiBox-root css-58kkol"><div class="MuiBox-root css-3b2wtl"><img/></div><p class="MuiTypography-root MuiTypography-body1 css-a52qvt">Welcome Back</p><p class="MuiTypography-root MuiTypography-body1 css-97uudg">Please enter your credentials to access your secure portal</p><p class="MuiTypography-root MuiTypography-body1 css-1qwd97s">Username</p><div class="MuiFormControl-root MuiFormControl-fullWidth MuiTextField-root css-1rk0quz"><div class="MuiInputBase-root MuiOutlinedInput-root MuiInputBase-colorPrimary MuiInputBase-fullWidth Mui-focused MuiInputBase-formControl css-10uzne6"><input class="MuiInputBase-input MuiOutlinedInput-input css-1pk1fka" id="_r_a_" type="text" value="John Doe"/><fieldset class="MuiOutlinedInput-notchedOutline css-5v2ak0"><legend class="css-w4cd9x"><span class="notranslate">\u200b</span></legend></fieldset></div></div><p class="MuiTypography-root MuiTypography-body1 css-1qwd97s">Password</p><div class="MuiFormControl-root MuiFormControl-fullWidth MuiTextField-root css-18lile"><div class="MuiInputBase-root MuiOutlinedInput-root MuiInputBase-colorPrimary MuiInputBase-fullWidth MuiInputBase-formControl MuiInputBase-adornedEnd css-9t62qu"><input class="MuiInputBase-input MuiOutlinedInput-input MuiInputBase-inputAdornedEnd css-qwdxx6" id="_r_b_" type="password" value=""/><div class="MuiInputAdornment-root MuiInputAdornment-positionEnd MuiInputAdornment-outlined MuiInputAdornment-sizeMedium css-yxqbup"><button class="MuiButtonBase-root MuiIconButton-root MuiIconButton-sizeMedium css-mfslm7" type="button"></button></div><fieldset class="MuiOutlinedInput-notchedOutline css-5v2ak0"><legend class="css-w4cd9x"><span class="notranslate">\u200b</span></legend></fieldset></div></div><label class="MuiFormControlLabel-root MuiFormControlLabel-labelPlacementEnd css-obg4lq"><span class="MuiButtonBase-root MuiCheckbox-root MuiCheckbox-colorPrimary MuiCheckbox-sizeMedium PrivateSwitchBase-root MuiCheckbox-root MuiCheckbox-colorPrimary MuiCheckbox-sizeMedium MuiCheckbox-root MuiCheckbox-colorPrimary MuiCheckbox-sizeMedium css-btgiec"><input class="PrivateSwitchBase-input css-j8yymo" type="checkbox"/></span><span class="MuiTypography-root MuiTypography-body1 MuiFormControlLabel-label css-fyswvn">Remember me</span></label><button class="MuiButtonBase-root MuiButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeMedium MuiButton-containedSizeMedium MuiButton-colorPrimary MuiButton-fullWidth MuiButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeMedium MuiButton-containedSizeMedium MuiButton-colorPrimary MuiButton-fullWidth css-1jo074v" type="button">LOGIN</button><div class="MuiBox-root css-xi606m"><a>Forgot Password?</a></div></div></div></div></div>\n</body>' keyword_name='Select From List By Value' keyword_args=('id:_r_b_', 'Self') failed_locator='id:_r_b_' tried_locator_memory=[] locator_type='tbd' file_usage_ctx='*** Settings ***\nLibrary    SeleniumLibrary\nLibrary    SelfhealingAgents\n\n*** Variables ***\n${url}   http://10.13.1.180/ais/ \n${browser}    Firefox \n${time}    5 seconds\n${username}    claimantqa@gmail.com\n${password}    Camunda@123\n\n*** Test Cases ***\nAaseyaClaims\n    AISHealtCareLoginPage\n    RegisterPre-ClaimApproval\n    \n\n\n*** Keywords ***\n\nAISHealtCareLoginPage\n    Open Browser    ${url}    ${browser}\n    Maximize browser Window\n    Set selenium implicit wait    ${time}\n    Click Button    Pre-Claim Authorization\n    Input Text    id:_r_6_    ${username}\n    Input Text    id:_r_7_    ${password}\n    Sleep    5 Seconds\n    Click Button    LOGIN\n    \n    \nRegisterPre-ClaimApproval\n    Set selenium implicit wait    ${time}\n    Input Text    id:_r_a_    John Doe\n    Select From List By Value    id:_r_b_    Self\n    Input Text    id:_r_c_    1321323'
+2026-02-11 18:44:36,493 - SelfhealingReports - INFO - Calling function: get_client_model with args: (), kwargs: {'provider': 'openai', 'model': 'gpt-4o-mini', 'cfg': Cfg(enable_self_healing=True, use_llm_for_locator_generation=True, max_retries=3, orchestrator_agent_provider='openai', orchestrator_agent_model='gpt-4o-mini', orchestrator_agent_temperature=0.1, locator_agent_provider='openai', locator_agent_model='gpt-4o-mini', locator_agent_temperature=0.1, request_limit=5, total_tokens_limit=6000, locator_type='css', report_directory=None, is_rerun_activated=False, azure_api_key='<REDACTED API Key>', azure_api_version=None, azure_endpoint='<REDACTED API Endpoint>', openai_api_key='<REDACTED API Key>', base_url='<REDACTED BASE URL>', litellm_api_key='<REDACTED API Key>')}
+2026-02-11 18:44:37,487 - SelfhealingReports - INFO - Function get_client_model returned: OpenAIModel()
+2026-02-11 18:44:37,489 - SelfhealingReports - INFO - Calling function: get_client_model with args: (), kwargs: {'provider': 'openai', 'model': 'gpt-4o-mini', 'cfg': Cfg(enable_self_healing=True, use_llm_for_locator_generation=True, max_retries=3, orchestrator_agent_provider='openai', orchestrator_agent_model='gpt-4o-mini', orchestrator_agent_temperature=0.1, locator_agent_provider='openai', locator_agent_model='gpt-4o-mini', locator_agent_temperature=0.1, request_limit=5, total_tokens_limit=6000, locator_type='css', report_directory=None, is_rerun_activated=False, azure_api_key='<REDACTED API Key>', azure_api_version=None, azure_endpoint='<REDACTED API Endpoint>', openai_api_key='<REDACTED API Key>', base_url='<REDACTED BASE URL>', litellm_api_key='<REDACTED API Key>')}
+2026-02-11 18:44:37,498 - SelfhealingReports - INFO - Function get_client_model returned: OpenAIModel()
+2026-02-11 18:44:37,500 - SelfhealingReports - ERROR - Function kickoff_healing raised an exception:
+Traceback (most recent call last):
+  File "d:\EuroControl\.venv\Lib\site-packages\SeleniumLibrary\__init__.py", line 676, in run_keyword
+    return DynamicCore.run_keyword(self, name, args, kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "d:\EuroControl\.venv\Lib\site-packages\robotlibcore\core\dynamic.py", line 25, in run_keyword
+    return self.keywords[name](*args, **(kwargs or {}))
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "d:\EuroControl\.venv\Lib\site-packages\SeleniumLibrary\keywords\selectelement.py", line 251, in select_from_list_by_value
+    select = self._get_select_list(locator)
+  File "d:\EuroControl\.venv\Lib\site-packages\SeleniumLibrary\keywords\selectelement.py", line 372, in _get_select_list
+    el = self.find_element(locator, tag="list")
+  File "d:\EuroControl\.venv\Lib\site-packages\SeleniumLibrary\base\context.py", line 82, in find_element
+    return self.element_finder.find(locator, tag, True, required, parent)
+           ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "d:\EuroControl\.venv\Lib\site-packages\SeleniumLibrary\locators\elementfinder.py", line 93, in find
+    return self._find(locators[-1], tag, first_only, required, element)
+           ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "d:\EuroControl\.venv\Lib\site-packages\SeleniumLibrary\locators\elementfinder.py", line 125, in _find
+    raise ElementNotFound(f"{element_type} with locator '{locator}' not found.")
+SeleniumLibrary.errors.ElementNotFound: List with locator 'id:_r_b_' not found.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "d:\EuroControl\.venv\Lib\site-packages\SelfhealingAgents\utils\logging.py", line 96, in sync_wrapper
+    result: Any = func(*args, **kwargs)
+                  ~~~~^^^^^^^^^^^^^^^^^
+  File "d:\EuroControl\.venv\Lib\site-packages\SelfhealingAgents\self_healing_system\kickoff_multi_agent_system.py", line 70, in kickoff_healing
+    response = asyncio.get_event_loop().run_until_complete(
+               ~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\kavita.chonkar\AppData\Local\Python\pythoncore-3.14-64\Lib\asyncio\events.py", line 715, in get_event_loop
+    raise RuntimeError('There is no current event loop in thread %r.'
+                       % threading.current_thread().name)
+RuntimeError: There is no current event loop in thread 'MainThread'.
+2026-02-12 11:29:40,946 - SelfhealingReports - INFO - Calling function: kickoff_healing with args: (robot.running.Keyword(name='Open Browser', args=('${url}', '${browser}'), assign=()), robot.result.Keyword(name='Open Browser', args=('${url}', '${browser}'), assign=())), kwargs: {'cfg': Cfg(enable_self_healing=True, use_llm_for_locator_generation=True, max_retries=3, orchestrator_agent_provider='openai', orchestrator_agent_model='gpt-4o-mini', orchestrator_agent_temperature=0.1, locator_agent_provider='openai', locator_agent_model='gpt-4o-mini', locator_agent_temperature=0.1, request_limit=5, total_tokens_limit=6000, locator_type='css', report_directory=None, is_rerun_activated=False, azure_api_key='<REDACTED API Key>', azure_api_version=None, azure_endpoint='<REDACTED API Endpoint>', openai_api_key='<REDACTED API Key>', base_url='<REDACTED BASE URL>', litellm_api_key='<REDACTED API Key>'), 'tried_locator_memory': []}
+2026-02-12 11:29:40,948 - SelfhealingReports - INFO - Calling function: get_context_payload with args: (robot.running.Keyword(name='Open Browser', args=('${url}', '${browser}'), assign=()), robot.result.Keyword(name='Open Browser', args=('${url}', '${browser}'), assign=()), <SelfhealingAgents.self_healing_system.context_retrieving.library_dom_utils.selenium_dom_utils.SeleniumDomUtils object at 0x000001F2C9409A90>), kwargs: {}
+2026-02-12 11:29:40,995 - SelfhealingReports - INFO - Function get_context_payload returned: robot_code_line='Open Browser ${url} ${browser}' error_msg='WebDriverException: Message: Reached error page: about:neterror?e=netTimeout&u=http%3A//10.13.1.180/ais/&c=UTF-8&d=The%20server%20at%2010.13.1.180%20is%20taking%20too%20long%20to%20respond.\nStacktrace:\nRemoteError@chrome://remote/content/shared/RemoteError.sys.mjs:8:8\nWebDriverError@chrome://remote/content/shared/webdriver/Errors.sys.mjs:188:5\nUnknownError@chrome://remote/content/shared/webdriver/Errors.sys.mjs:752:5\ncheckReadyState@chrome://remote/content/marionette/navigate.sys.mjs:59:24\nonNavigation@chrome://remote/content/marionette/navigate.sys.mjs:327:39\nemit@resource://gre/modules/EventEmitter.sys.mjs:154:20\nreceiveMessage@chrome://remote/content/marionette/actors/MarionetteEventsParent.sys.mjs:33:25\n' dom_tree='<body class="neterror">\n<!-- PAGE CONTAINER (for styling purposes only) -->\n<div class="container">\n<div id="text-container">\n<!-- Error Title -->\n<div class="title">\n<h1 class="title-text">The connection has timed out</h1>\n</div>\n<!-- Short Description -->\n<p id="errorShortDesc">The server at 10.13.1.180 is taking too long to respond.</p>\n<p id="errorShortDesc2"></p>\n<div id="errorWhatToDo">\n<p id="errorWhatToDoTitle">What can you do about it?</p>\n<p id="badStsCertExplanation"></p>\n<p id="errorWhatToDoText"></p>\n</div>\n<!-- Long Description -->\n<div id="errorLongDesc"><ul><li>The site could be temporarily unavailable or too busy. Try again in a few moments.</li><li>If you are unable to load any pages, check your computer’s network connection.</li><li>If your computer or network is protected by a firewall or proxy, make sure that Firefox is permitted to access the web.</li></ul></div>\n<p id="trrOnlyContainer">\n<p id="trrOnlyMessage"></p>\n<div class="trr-message-container">\n<span id="trrOnlyDescription"></span>\n<p id="trrLearnMoreContainer">\n<a id="trrOnlylearnMoreLink">Learn more…</a>\n</p>\n</div>\n<p>You can continue with your default DNS resolver. However, a third-party might be able to see what websites you visit.</p>\n</p>\n<p id="nativeFallbackContainer">\n<p id="nativeFallbackMessage"></p>\n<div class="trr-message-container">\n<span id="nativeFallbackDescription"></span>\n<p id="nativeFallbackLearnMoreContainer">\n<a id="nativeFallbackLearnMoreLink">Learn more…</a>\n</p>\n</div>\n<p>You can continue with your default DNS resolver. However, a third-party might be able to see what websites you visit.</p>\n</p>\n<p id="tlsVersionNotice"></p>\n<p id="learnMoreContainer">\n<a id="learnMoreLink">Learn more…</a>\n</p>\n<div class="button-container" id="openInNewWindowContainer">\n<p><a id="openInNewWindowButton">\n<button class="primary">Open Site in New Window</button></a></p>\n</div>\n<!-- UI for option to report certificate errors to Mozilla. Removed on\n             init for other error types .-->\n<div class="button-container" id="prefChangeContainer">\n<p>It looks like your network security settings might be causing this. Do you want the default settings to be restored?</p>\n<button class="primary" id="prefResetButton">Restore default settings</button>\n</div>\n<div class="button-container" id="certErrorAndCaptivePortalButtonContainer">\n<button class="primary" id="returnButton">Go Back (Recommended)</button>\n<button class="primary" id="openPortalLoginPageButton">Open Network Login Page</button>\n<button class="primary try-again" id="certErrorTryAgainButton">Try Again</button>\n<button id="advancedButton">Advanced…</button>\n</div>\n</div>\n<div class="button-container" id="netErrorButtonContainer"><button class="primary try-again" id="neterrorTryAgainButton">Try Again</button>\n<button id="trrExceptionButton">Always continue for this site</button>\n<button id="trrSettingsButton">Change DNS settings</button>\n<button id="nativeFallbackContinueThisTimeButton">Continue this time</button>\n<button id="nativeFallbackIgnoreButton">Always continue</button>\n</div>\n<div class="advanced-panel-container">\n<div class="advanced-panel" id="badCertAdvancedPanel">\n<p id="badCertTechnicalInfo"></p>\n<a id="viewCertificate">View Certificate</a>\n<div class="button-container" id="advancedPanelButtonContainer">\n<button class="primary" id="advancedPanelReturnButton">Go Back (Recommended)</button>\n<button class="primary try-again" id="advancedPanelTryAgainButton">Try Again</button>\n<button id="exceptionDialogButton">Accept the Risk and Continue</button>\n</div>\n</div>\n<div class="advanced-panel" id="blockingErrorReporting">\n<p class="toggle-container-with-text">\n<input id="automaticallyReportBlockingInFuture" role="checkbox" type="checkbox"/>\n<label>Report errors like this to help Mozilla identify and block malicious sites</label>\n</p>\n</div>\n<div class="advanced-panel" id="certificateErrorDebugInformation">\n<button id="copyToClipboardTop">Copy text to clipboard</button>\n<div id="certificateErrorText"></div>\n<button id="copyToClipboardBottom">Copy text to clipboard</button>\n</div>\n</div>\n</div>\n</body>' keyword_name='Open Browser' keyword_args=('${url}', '${browser}') failed_locator='http://10.13.1.180/ais/' tried_locator_memory=[] locator_type='tbd' file_usage_ctx='*** Settings ***\nLibrary    SeleniumLibrary\n\n     \n\n*** Variables ***\n${url}   http://10.13.1.180/ais/ \n${browser}    Firefox \n\n\n*** Keywords ***\n\nOpenTheBrowser\n        Open Browser    ${url}    ${browser}\n'
+2026-02-12 11:29:40,996 - SelfhealingReports - INFO - Calling function: get_client_model with args: (), kwargs: {'provider': 'openai', 'model': 'gpt-4o-mini', 'cfg': Cfg(enable_self_healing=True, use_llm_for_locator_generation=True, max_retries=3, orchestrator_agent_provider='openai', orchestrator_agent_model='gpt-4o-mini', orchestrator_agent_temperature=0.1, locator_agent_provider='openai', locator_agent_model='gpt-4o-mini', locator_agent_temperature=0.1, request_limit=5, total_tokens_limit=6000, locator_type='css', report_directory=None, is_rerun_activated=False, azure_api_key='<REDACTED API Key>', azure_api_version=None, azure_endpoint='<REDACTED API Endpoint>', openai_api_key='<REDACTED API Key>', base_url='<REDACTED BASE URL>', litellm_api_key='<REDACTED API Key>')}
+2026-02-12 11:29:43,080 - SelfhealingReports - INFO - Function get_client_model returned: OpenAIModel()
+2026-02-12 11:29:43,109 - SelfhealingReports - INFO - Calling function: get_client_model with args: (), kwargs: {'provider': 'openai', 'model': 'gpt-4o-mini', 'cfg': Cfg(enable_self_healing=True, use_llm_for_locator_generation=True, max_retries=3, orchestrator_agent_provider='openai', orchestrator_agent_model='gpt-4o-mini', orchestrator_agent_temperature=0.1, locator_agent_provider='openai', locator_agent_model='gpt-4o-mini', locator_agent_temperature=0.1, request_limit=5, total_tokens_limit=6000, locator_type='css', report_directory=None, is_rerun_activated=False, azure_api_key='<REDACTED API Key>', azure_api_version=None, azure_endpoint='<REDACTED API Endpoint>', openai_api_key='<REDACTED API Key>', base_url='<REDACTED BASE URL>', litellm_api_key='<REDACTED API Key>')}
+2026-02-12 11:29:43,190 - SelfhealingReports - INFO - Function get_client_model returned: OpenAIModel()
+2026-02-12 11:29:43,205 - SelfhealingReports - ERROR - Function kickoff_healing raised an exception:
+Traceback (most recent call last):
+  File "d:\EuroControl\.venv\Lib\site-packages\SeleniumLibrary\__init__.py", line 676, in run_keyword
+    return DynamicCore.run_keyword(self, name, args, kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "d:\EuroControl\.venv\Lib\site-packages\robotlibcore\core\dynamic.py", line 25, in run_keyword
+    return self.keywords[name](*args, **(kwargs or {}))
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "d:\EuroControl\.venv\Lib\site-packages\SeleniumLibrary\keywords\browsermanagement.py", line 220, in open_browser
+    return self._make_new_browser(
+           ~~~~~~~~~~~~~~~~~~~~~~^
+        url,
+        ^^^^
+    ...<8 lines>...
+        service,
+        ^^^^^^^^
+    )
+    ^
+  File "d:\EuroControl\.venv\Lib\site-packages\SeleniumLibrary\keywords\browsermanagement.py", line 267, in _make_new_browser
+    driver.get(url)
+    ~~~~~~~~~~^^^^^
+  File "d:\EuroControl\.venv\Lib\site-packages\selenium\webdriver\remote\webdriver.py", line 452, in get
+    self.execute(Command.GET, {"url": url})
+    ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "d:\EuroControl\.venv\Lib\site-packages\selenium\webdriver\remote\webdriver.py", line 432, in execute
+    self.error_handler.check_response(response)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^
+  File "d:\EuroControl\.venv\Lib\site-packages\selenium\webdriver\remote\errorhandler.py", line 232, in check_response
+    raise exception_class(message, screen, stacktrace)
+selenium.common.exceptions.WebDriverException: Message: Reached error page: about:neterror?e=netTimeout&u=http%3A//10.13.1.180/ais/&c=UTF-8&d=The%20server%20at%2010.13.1.180%20is%20taking%20too%20long%20to%20respond.
+Stacktrace:
+RemoteError@chrome://remote/content/shared/RemoteError.sys.mjs:8:8
+WebDriverError@chrome://remote/content/shared/webdriver/Errors.sys.mjs:188:5
+UnknownError@chrome://remote/content/shared/webdriver/Errors.sys.mjs:752:5
+checkReadyState@chrome://remote/content/marionette/navigate.sys.mjs:59:24
+onNavigation@chrome://remote/content/marionette/navigate.sys.mjs:327:39
+emit@resource://gre/modules/EventEmitter.sys.mjs:154:20
+receiveMessage@chrome://remote/content/marionette/actors/MarionetteEventsParent.sys.mjs:33:25
+
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "d:\EuroControl\.venv\Lib\site-packages\SelfhealingAgents\utils\logging.py", line 96, in sync_wrapper
+    result: Any = func(*args, **kwargs)
+                  ~~~~^^^^^^^^^^^^^^^^^
+  File "d:\EuroControl\.venv\Lib\site-packages\SelfhealingAgents\self_healing_system\kickoff_multi_agent_system.py", line 70, in kickoff_healing
+    response = asyncio.get_event_loop().run_until_complete(
+               ~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\kavita.chonkar\AppData\Local\Python\pythoncore-3.14-64\Lib\asyncio\events.py", line 715, in get_event_loop
+    raise RuntimeError('There is no current event loop in thread %r.'
+                       % threading.current_thread().name)
+RuntimeError: There is no current event loop in thread 'MainThread'.
+2026-02-12 11:30:23,411 - SelfhealingReports - INFO - Calling function: kickoff_healing with args: (robot.running.Keyword(name='Select From List By Value', args=('id:_r_b_', 'Self'), assign=()), robot.result.Keyword(name='Select From List By Value', args=('id:_r_b_', 'Self'), assign=())), kwargs: {'cfg': Cfg(enable_self_healing=True, use_llm_for_locator_generation=True, max_retries=3, orchestrator_agent_provider='openai', orchestrator_agent_model='gpt-4o-mini', orchestrator_agent_temperature=0.1, locator_agent_provider='openai', locator_agent_model='gpt-4o-mini', locator_agent_temperature=0.1, request_limit=5, total_tokens_limit=6000, locator_type='css', report_directory=None, is_rerun_activated=False, azure_api_key='<REDACTED API Key>', azure_api_version=None, azure_endpoint='<REDACTED API Endpoint>', openai_api_key='<REDACTED API Key>', base_url='<REDACTED BASE URL>', litellm_api_key='<REDACTED API Key>'), 'tried_locator_memory': []}
+2026-02-12 11:30:23,412 - SelfhealingReports - INFO - Calling function: get_context_payload with args: (robot.running.Keyword(name='Select From List By Value', args=('id:_r_b_', 'Self'), assign=()), robot.result.Keyword(name='Select From List By Value', args=('id:_r_b_', 'Self'), assign=()), <SelfhealingAgents.self_healing_system.context_retrieving.library_dom_utils.selenium_dom_utils.SeleniumDomUtils object at 0x000001E38A72A510>), kwargs: {}
+2026-02-12 11:30:23,431 - SelfhealingReports - INFO - Function get_context_payload returned: robot_code_line='Select From List By Value id:_r_b_ Self' error_msg="List with locator 'id:_r_b_' not found." dom_tree='<body>\n<div id="root"><div class="MuiBox-root css-1kdgnzq"><div class="MuiBox-root css-1pd736a"><img/><div class="MuiBox-root css-1u5ih8"><p class="MuiTypography-root MuiTypography-body1 css-1tkzlsh">Reliable health coverage for you and your family</p><p class="MuiTypography-root MuiTypography-body1 css-de2l7a">Our digital-first approach ensures that your health and claims are prioritized with professional care and minimal friction</p></div></div><div class="MuiBox-root css-qezfun"><div class="MuiBox-root css-58kkol"><div class="MuiBox-root css-3b2wtl"><img/></div><p class="MuiTypography-root MuiTypography-body1 css-a52qvt">Welcome Back</p><p class="MuiTypography-root MuiTypography-body1 css-97uudg">Please enter your credentials to access your secure portal</p><p class="MuiTypography-root MuiTypography-body1 css-1qwd97s">Username</p><div class="MuiFormControl-root MuiFormControl-fullWidth MuiTextField-root css-1rk0quz"><div class="MuiInputBase-root MuiOutlinedInput-root MuiInputBase-colorPrimary MuiInputBase-fullWidth Mui-focused MuiInputBase-formControl css-10uzne6"><input class="MuiInputBase-input MuiOutlinedInput-input css-1pk1fka" id="_r_a_" type="text" value="John Doe"/><fieldset class="MuiOutlinedInput-notchedOutline css-5v2ak0"><legend class="css-w4cd9x"><span class="notranslate">\u200b</span></legend></fieldset></div></div><p class="MuiTypography-root MuiTypography-body1 css-1qwd97s">Password</p><div class="MuiFormControl-root MuiFormControl-fullWidth MuiTextField-root css-18lile"><div class="MuiInputBase-root MuiOutlinedInput-root MuiInputBase-colorPrimary MuiInputBase-fullWidth MuiInputBase-formControl MuiInputBase-adornedEnd css-9t62qu"><input class="MuiInputBase-input MuiOutlinedInput-input MuiInputBase-inputAdornedEnd css-qwdxx6" id="_r_b_" type="password" value=""/><div class="MuiInputAdornment-root MuiInputAdornment-positionEnd MuiInputAdornment-outlined MuiInputAdornment-sizeMedium css-yxqbup"><button class="MuiButtonBase-root MuiIconButton-root MuiIconButton-sizeMedium css-mfslm7" type="button"></button></div><fieldset class="MuiOutlinedInput-notchedOutline css-5v2ak0"><legend class="css-w4cd9x"><span class="notranslate">\u200b</span></legend></fieldset></div></div><label class="MuiFormControlLabel-root MuiFormControlLabel-labelPlacementEnd css-obg4lq"><span class="MuiButtonBase-root MuiCheckbox-root MuiCheckbox-colorPrimary MuiCheckbox-sizeMedium PrivateSwitchBase-root MuiCheckbox-root MuiCheckbox-colorPrimary MuiCheckbox-sizeMedium MuiCheckbox-root MuiCheckbox-colorPrimary MuiCheckbox-sizeMedium css-btgiec"><input class="PrivateSwitchBase-input css-j8yymo" type="checkbox"/></span><span class="MuiTypography-root MuiTypography-body1 MuiFormControlLabel-label css-fyswvn">Remember me</span></label><button class="MuiButtonBase-root MuiButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeMedium MuiButton-containedSizeMedium MuiButton-colorPrimary MuiButton-fullWidth MuiButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeMedium MuiButton-containedSizeMedium MuiButton-colorPrimary MuiButton-fullWidth css-1jo074v" type="button">LOGIN</button><div class="MuiBox-root css-xi606m"><a>Forgot Password?</a></div></div></div></div></div>\n</body>' keyword_name='Select From List By Value' keyword_args=('id:_r_b_', 'Self') failed_locator='id:_r_b_' tried_locator_memory=[] locator_type='tbd' file_usage_ctx='*** Settings ***\nLibrary    SeleniumLibrary\nLibrary    SelfhealingAgents\n\nTest Setup       OpenTheBrowser\nTest Teardown        Close Browser\n\nResource        resource.robot\n\n*** Variables ***\n\n${time}    5 seconds\n${username}    claimantqa@gmail.com\n${password}    Camunda@123\n\n*** Test Cases ***\nAaseyaClaims\n    AISHealtCareLoginPage\n    RegisterPre-ClaimApproval\n    \n\n\n*** Keywords ***\n\nAISHealtCareLoginPage\n    Maximize browser Window\n    Set selenium implicit wait    ${time}\n    Click Button    Pre-Claim Authorization\n    Input Text    id:_r_6_    ${username}\n    Input Text    id:_r_7_    ${password}\n    Sleep    5 Seconds\n    Click Button    LOGIN\n    \n    \nRegisterPre-ClaimApproval\n    Set selenium implicit wait    ${time}\n    Input Text    id:_r_a_    John Doe\n    Select From List By Value    id:_r_b_    Self\n    Input Text    id:_r_c_    1321323'
+2026-02-12 11:30:23,431 - SelfhealingReports - INFO - Calling function: get_client_model with args: (), kwargs: {'provider': 'openai', 'model': 'gpt-4o-mini', 'cfg': Cfg(enable_self_healing=True, use_llm_for_locator_generation=True, max_retries=3, orchestrator_agent_provider='openai', orchestrator_agent_model='gpt-4o-mini', orchestrator_agent_temperature=0.1, locator_agent_provider='openai', locator_agent_model='gpt-4o-mini', locator_agent_temperature=0.1, request_limit=5, total_tokens_limit=6000, locator_type='css', report_directory=None, is_rerun_activated=False, azure_api_key='<REDACTED API Key>', azure_api_version=None, azure_endpoint='<REDACTED API Endpoint>', openai_api_key='<REDACTED API Key>', base_url='<REDACTED BASE URL>', litellm_api_key='<REDACTED API Key>')}
+2026-02-12 11:30:24,428 - SelfhealingReports - INFO - Function get_client_model returned: OpenAIModel()
+2026-02-12 11:30:24,433 - SelfhealingReports - INFO - Calling function: get_client_model with args: (), kwargs: {'provider': 'openai', 'model': 'gpt-4o-mini', 'cfg': Cfg(enable_self_healing=True, use_llm_for_locator_generation=True, max_retries=3, orchestrator_agent_provider='openai', orchestrator_agent_model='gpt-4o-mini', orchestrator_agent_temperature=0.1, locator_agent_provider='openai', locator_agent_model='gpt-4o-mini', locator_agent_temperature=0.1, request_limit=5, total_tokens_limit=6000, locator_type='css', report_directory=None, is_rerun_activated=False, azure_api_key='<REDACTED API Key>', azure_api_version=None, azure_endpoint='<REDACTED API Endpoint>', openai_api_key='<REDACTED API Key>', base_url='<REDACTED BASE URL>', litellm_api_key='<REDACTED API Key>')}
+2026-02-12 11:30:24,519 - SelfhealingReports - INFO - Function get_client_model returned: OpenAIModel()
+2026-02-12 11:30:24,527 - SelfhealingReports - ERROR - Function kickoff_healing raised an exception:
+Traceback (most recent call last):
+  File "d:\EuroControl\.venv\Lib\site-packages\SeleniumLibrary\__init__.py", line 676, in run_keyword
+    return DynamicCore.run_keyword(self, name, args, kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "d:\EuroControl\.venv\Lib\site-packages\robotlibcore\core\dynamic.py", line 25, in run_keyword
+    return self.keywords[name](*args, **(kwargs or {}))
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "d:\EuroControl\.venv\Lib\site-packages\SeleniumLibrary\keywords\selectelement.py", line 251, in select_from_list_by_value
+    select = self._get_select_list(locator)
+  File "d:\EuroControl\.venv\Lib\site-packages\SeleniumLibrary\keywords\selectelement.py", line 372, in _get_select_list
+    el = self.find_element(locator, tag="list")
+  File "d:\EuroControl\.venv\Lib\site-packages\SeleniumLibrary\base\context.py", line 82, in find_element
+    return self.element_finder.find(locator, tag, True, required, parent)
+           ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "d:\EuroControl\.venv\Lib\site-packages\SeleniumLibrary\locators\elementfinder.py", line 93, in find
+    return self._find(locators[-1], tag, first_only, required, element)
+           ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "d:\EuroControl\.venv\Lib\site-packages\SeleniumLibrary\locators\elementfinder.py", line 125, in _find
+    raise ElementNotFound(f"{element_type} with locator '{locator}' not found.")
+SeleniumLibrary.errors.ElementNotFound: List with locator 'id:_r_b_' not found.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "d:\EuroControl\.venv\Lib\site-packages\SelfhealingAgents\utils\logging.py", line 96, in sync_wrapper
+    result: Any = func(*args, **kwargs)
+                  ~~~~^^^^^^^^^^^^^^^^^
+  File "d:\EuroControl\.venv\Lib\site-packages\SelfhealingAgents\self_healing_system\kickoff_multi_agent_system.py", line 70, in kickoff_healing
+    response = asyncio.get_event_loop().run_until_complete(
+               ~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\kavita.chonkar\AppData\Local\Python\pythoncore-3.14-64\Lib\asyncio\events.py", line 715, in get_event_loop
+    raise RuntimeError('There is no current event loop in thread %r.'
+                       % threading.current_thread().name)
+RuntimeError: There is no current event loop in thread 'MainThread'.
+2026-02-12 11:34:48,683 - SelfhealingReports - INFO - Calling function: kickoff_healing with args: (robot.running.Keyword(name='Select From List By Value', args=('id:_r_b_', 'Self'), assign=()), robot.result.Keyword(name='Select From List By Value', args=('id:_r_b_', 'Self'), assign=())), kwargs: {'cfg': Cfg(enable_self_healing=True, use_llm_for_locator_generation=True, max_retries=3, orchestrator_agent_provider='openai', orchestrator_agent_model='gpt-4o-mini', orchestrator_agent_temperature=0.1, locator_agent_provider='openai', locator_agent_model='gpt-4o-mini', locator_agent_temperature=0.1, request_limit=5, total_tokens_limit=6000, locator_type='css', report_directory=None, is_rerun_activated=False, azure_api_key='<REDACTED API Key>', azure_api_version=None, azure_endpoint='<REDACTED API Endpoint>', openai_api_key='<REDACTED API Key>', base_url='<REDACTED BASE URL>', litellm_api_key='<REDACTED API Key>'), 'tried_locator_memory': []}
+2026-02-12 11:34:48,684 - SelfhealingReports - INFO - Calling function: get_context_payload with args: (robot.running.Keyword(name='Select From List By Value', args=('id:_r_b_', 'Self'), assign=()), robot.result.Keyword(name='Select From List By Value', args=('id:_r_b_', 'Self'), assign=()), <SelfhealingAgents.self_healing_system.context_retrieving.library_dom_utils.selenium_dom_utils.SeleniumDomUtils object at 0x000002BD983EA510>), kwargs: {}
+2026-02-12 11:34:48,704 - SelfhealingReports - INFO - Function get_context_payload returned: robot_code_line='Select From List By Value id:_r_b_ Self' error_msg="List with locator 'id:_r_b_' not found." dom_tree='<body>\n<div id="root"><div class="MuiBox-root css-1kdgnzq"><div class="MuiBox-root css-1pd736a"><img/><div class="MuiBox-root css-1u5ih8"><p class="MuiTypography-root MuiTypography-body1 css-1tkzlsh">Reliable health coverage for you and your family</p><p class="MuiTypography-root MuiTypography-body1 css-de2l7a">Our digital-first approach ensures that your health and claims are prioritized with professional care and minimal friction</p></div></div><div class="MuiBox-root css-qezfun"><div class="MuiBox-root css-58kkol"><div class="MuiBox-root css-3b2wtl"><img/></div><p class="MuiTypography-root MuiTypography-body1 css-a52qvt">Welcome Back</p><p class="MuiTypography-root MuiTypography-body1 css-97uudg">Please enter your credentials to access your secure portal</p><p class="MuiTypography-root MuiTypography-body1 css-1qwd97s">Username</p><div class="MuiFormControl-root MuiFormControl-fullWidth MuiTextField-root css-1rk0quz"><div class="MuiInputBase-root MuiOutlinedInput-root MuiInputBase-colorPrimary MuiInputBase-fullWidth Mui-focused MuiInputBase-formControl css-10uzne6"><input class="MuiInputBase-input MuiOutlinedInput-input css-1pk1fka" id="_r_a_" type="text" value="John Doe"/><fieldset class="MuiOutlinedInput-notchedOutline css-5v2ak0"><legend class="css-w4cd9x"><span class="notranslate">\u200b</span></legend></fieldset></div></div><p class="MuiTypography-root MuiTypography-body1 css-1qwd97s">Password</p><div class="MuiFormControl-root MuiFormControl-fullWidth MuiTextField-root css-18lile"><div class="MuiInputBase-root MuiOutlinedInput-root MuiInputBase-colorPrimary MuiInputBase-fullWidth MuiInputBase-formControl MuiInputBase-adornedEnd css-9t62qu"><input class="MuiInputBase-input MuiOutlinedInput-input MuiInputBase-inputAdornedEnd css-qwdxx6" id="_r_b_" type="password" value=""/><div class="MuiInputAdornment-root MuiInputAdornment-positionEnd MuiInputAdornment-outlined MuiInputAdornment-sizeMedium css-yxqbup"><button class="MuiButtonBase-root MuiIconButton-root MuiIconButton-sizeMedium css-mfslm7" type="button"></button></div><fieldset class="MuiOutlinedInput-notchedOutline css-5v2ak0"><legend class="css-w4cd9x"><span class="notranslate">\u200b</span></legend></fieldset></div></div><label class="MuiFormControlLabel-root MuiFormControlLabel-labelPlacementEnd css-obg4lq"><span class="MuiButtonBase-root MuiCheckbox-root MuiCheckbox-colorPrimary MuiCheckbox-sizeMedium PrivateSwitchBase-root MuiCheckbox-root MuiCheckbox-colorPrimary MuiCheckbox-sizeMedium MuiCheckbox-root MuiCheckbox-colorPrimary MuiCheckbox-sizeMedium css-btgiec"><input class="PrivateSwitchBase-input css-j8yymo" type="checkbox"/></span><span class="MuiTypography-root MuiTypography-body1 MuiFormControlLabel-label css-fyswvn">Remember me</span></label><button class="MuiButtonBase-root MuiButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeMedium MuiButton-containedSizeMedium MuiButton-colorPrimary MuiButton-fullWidth MuiButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeMedium MuiButton-containedSizeMedium MuiButton-colorPrimary MuiButton-fullWidth css-1jo074v" type="button">LOGIN</button><div class="MuiBox-root css-xi606m"><a>Forgot Password?</a></div></div></div></div></div>\n</body>' keyword_name='Select From List By Value' keyword_args=('id:_r_b_', 'Self') failed_locator='id:_r_b_' tried_locator_memory=[] locator_type='tbd' file_usage_ctx='*** Settings ***\nLibrary    SeleniumLibrary\nLibrary    SelfhealingAgents\nLibrary    initialize_async.py\n\nTest Setup       OpenTheBrowser\nTest Teardown        Close Browser\n\nResource        resource.robot\n\n*** Variables ***\n\n${time}    5 seconds\n${username}    claimantqa@gmail.com\n${password}    Camunda@123\n\n*** Test Cases ***\nAaseyaClaims\n    AISHealtCareLoginPage\n    RegisterPre-ClaimApproval\n    \n\n\n*** Keywords ***\n\nAISHealtCareLoginPage\n    Maximize browser Window\n    Set selenium implicit wait    ${time}\n    Click Button    Pre-Claim Authorization\n    Input Text    id:_r_6_    ${username}\n    Input Text    id:_r_7_    ${password}\n    Sleep    5 Seconds\n    Click Button    LOGIN\n    \n    \nRegisterPre-ClaimApproval\n    Set selenium implicit wait    ${time}\n    Input Text    id:_r_a_    John Doe\n    Select From List By Value    id:_r_b_    Self\n    Input Text    id:_r_c_    1321323'
+2026-02-12 11:34:48,704 - SelfhealingReports - INFO - Calling function: get_client_model with args: (), kwargs: {'provider': 'openai', 'model': 'gpt-4o-mini', 'cfg': Cfg(enable_self_healing=True, use_llm_for_locator_generation=True, max_retries=3, orchestrator_agent_provider='openai', orchestrator_agent_model='gpt-4o-mini', orchestrator_agent_temperature=0.1, locator_agent_provider='openai', locator_agent_model='gpt-4o-mini', locator_agent_temperature=0.1, request_limit=5, total_tokens_limit=6000, locator_type='css', report_directory=None, is_rerun_activated=False, azure_api_key='<REDACTED API Key>', azure_api_version=None, azure_endpoint='<REDACTED API Endpoint>', openai_api_key='<REDACTED API Key>', base_url='<REDACTED BASE URL>', litellm_api_key='<REDACTED API Key>')}
+2026-02-12 11:34:49,234 - SelfhealingReports - INFO - Function get_client_model returned: OpenAIModel()
+2026-02-12 11:34:49,237 - SelfhealingReports - INFO - Calling function: get_client_model with args: (), kwargs: {'provider': 'openai', 'model': 'gpt-4o-mini', 'cfg': Cfg(enable_self_healing=True, use_llm_for_locator_generation=True, max_retries=3, orchestrator_agent_provider='openai', orchestrator_agent_model='gpt-4o-mini', orchestrator_agent_temperature=0.1, locator_agent_provider='openai', locator_agent_model='gpt-4o-mini', locator_agent_temperature=0.1, request_limit=5, total_tokens_limit=6000, locator_type='css', report_directory=None, is_rerun_activated=False, azure_api_key='<REDACTED API Key>', azure_api_version=None, azure_endpoint='<REDACTED API Endpoint>', openai_api_key='<REDACTED API Key>', base_url='<REDACTED BASE URL>', litellm_api_key='<REDACTED API Key>')}
+2026-02-12 11:34:49,258 - SelfhealingReports - INFO - Function get_client_model returned: OpenAIModel()
+2026-02-12 11:34:49,263 - SelfhealingReports - ERROR - Function kickoff_healing raised an exception:
+Traceback (most recent call last):
+  File "d:\EuroControl\.venv\Lib\site-packages\SeleniumLibrary\__init__.py", line 676, in run_keyword
+    return DynamicCore.run_keyword(self, name, args, kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "d:\EuroControl\.venv\Lib\site-packages\robotlibcore\core\dynamic.py", line 25, in run_keyword
+    return self.keywords[name](*args, **(kwargs or {}))
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "d:\EuroControl\.venv\Lib\site-packages\SeleniumLibrary\keywords\selectelement.py", line 251, in select_from_list_by_value
+    select = self._get_select_list(locator)
+  File "d:\EuroControl\.venv\Lib\site-packages\SeleniumLibrary\keywords\selectelement.py", line 372, in _get_select_list
+    el = self.find_element(locator, tag="list")
+  File "d:\EuroControl\.venv\Lib\site-packages\SeleniumLibrary\base\context.py", line 82, in find_element
+    return self.element_finder.find(locator, tag, True, required, parent)
+           ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "d:\EuroControl\.venv\Lib\site-packages\SeleniumLibrary\locators\elementfinder.py", line 93, in find
+    return self._find(locators[-1], tag, first_only, required, element)
+           ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "d:\EuroControl\.venv\Lib\site-packages\SeleniumLibrary\locators\elementfinder.py", line 125, in _find
+    raise ElementNotFound(f"{element_type} with locator '{locator}' not found.")
+SeleniumLibrary.errors.ElementNotFound: List with locator 'id:_r_b_' not found.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "d:\EuroControl\.venv\Lib\site-packages\SelfhealingAgents\utils\logging.py", line 96, in sync_wrapper
+    result: Any = func(*args, **kwargs)
+                  ~~~~^^^^^^^^^^^^^^^^^
+  File "d:\EuroControl\.venv\Lib\site-packages\SelfhealingAgents\self_healing_system\kickoff_multi_agent_system.py", line 70, in kickoff_healing
+    response = asyncio.get_event_loop().run_until_complete(
+               ~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\kavita.chonkar\AppData\Local\Python\pythoncore-3.14-64\Lib\asyncio\events.py", line 715, in get_event_loop
+    raise RuntimeError('There is no current event loop in thread %r.'
+                       % threading.current_thread().name)
+RuntimeError: There is no current event loop in thread 'MainThread'.
+2026-02-12 11:35:58,638 - SelfhealingReports - INFO - Calling function: kickoff_healing with args: (robot.running.Keyword(name='Select From List By Value', args=('id:_r_b_', 'Self'), assign=()), robot.result.Keyword(name='Select From List By Value', args=('id:_r_b_', 'Self'), assign=())), kwargs: {'cfg': Cfg(enable_self_healing=True, use_llm_for_locator_generation=True, max_retries=3, orchestrator_agent_provider='openai', orchestrator_agent_model='gpt-4o-mini', orchestrator_agent_temperature=0.1, locator_agent_provider='openai', locator_agent_model='gpt-4o-mini', locator_agent_temperature=0.1, request_limit=5, total_tokens_limit=6000, locator_type='css', report_directory=None, is_rerun_activated=False, azure_api_key='<REDACTED API Key>', azure_api_version=None, azure_endpoint='<REDACTED API Endpoint>', openai_api_key='<REDACTED API Key>', base_url='<REDACTED BASE URL>', litellm_api_key='<REDACTED API Key>'), 'tried_locator_memory': []}
+2026-02-12 11:35:58,639 - SelfhealingReports - INFO - Calling function: get_context_payload with args: (robot.running.Keyword(name='Select From List By Value', args=('id:_r_b_', 'Self'), assign=()), robot.result.Keyword(name='Select From List By Value', args=('id:_r_b_', 'Self'), assign=()), <SelfhealingAgents.self_healing_system.context_retrieving.library_dom_utils.selenium_dom_utils.SeleniumDomUtils object at 0x00000217AADA8EC0>), kwargs: {}
+2026-02-12 11:35:58,662 - SelfhealingReports - INFO - Function get_context_payload returned: robot_code_line='Select From List By Value id:_r_b_ Self' error_msg="List with locator 'id:_r_b_' not found." dom_tree='<body>\n<div id="root"><div class="MuiBox-root css-1kdgnzq"><div class="MuiBox-root css-1pd736a"><img/><div class="MuiBox-root css-1u5ih8"><p class="MuiTypography-root MuiTypography-body1 css-1tkzlsh">Reliable health coverage for you and your family</p><p class="MuiTypography-root MuiTypography-body1 css-de2l7a">Our digital-first approach ensures that your health and claims are prioritized with professional care and minimal friction</p></div></div><div class="MuiBox-root css-qezfun"><div class="MuiBox-root css-58kkol"><div class="MuiBox-root css-3b2wtl"><img/></div><p class="MuiTypography-root MuiTypography-body1 css-a52qvt">Welcome Back</p><p class="MuiTypography-root MuiTypography-body1 css-97uudg">Please enter your credentials to access your secure portal</p><p class="MuiTypography-root MuiTypography-body1 css-1qwd97s">Username</p><div class="MuiFormControl-root MuiFormControl-fullWidth MuiTextField-root css-1rk0quz"><div class="MuiInputBase-root MuiOutlinedInput-root MuiInputBase-colorPrimary MuiInputBase-fullWidth Mui-focused MuiInputBase-formControl css-10uzne6"><input class="MuiInputBase-input MuiOutlinedInput-input css-1pk1fka" id="_r_a_" type="text" value="John Doe"/><fieldset class="MuiOutlinedInput-notchedOutline css-5v2ak0"><legend class="css-w4cd9x"><span class="notranslate">\u200b</span></legend></fieldset></div></div><p class="MuiTypography-root MuiTypography-body1 css-1qwd97s">Password</p><div class="MuiFormControl-root MuiFormControl-fullWidth MuiTextField-root css-18lile"><div class="MuiInputBase-root MuiOutlinedInput-root MuiInputBase-colorPrimary MuiInputBase-fullWidth MuiInputBase-formControl MuiInputBase-adornedEnd css-9t62qu"><input class="MuiInputBase-input MuiOutlinedInput-input MuiInputBase-inputAdornedEnd css-qwdxx6" id="_r_b_" type="password" value=""/><div class="MuiInputAdornment-root MuiInputAdornment-positionEnd MuiInputAdornment-outlined MuiInputAdornment-sizeMedium css-yxqbup"><button class="MuiButtonBase-root MuiIconButton-root MuiIconButton-sizeMedium css-mfslm7" type="button"></button></div><fieldset class="MuiOutlinedInput-notchedOutline css-5v2ak0"><legend class="css-w4cd9x"><span class="notranslate">\u200b</span></legend></fieldset></div></div><label class="MuiFormControlLabel-root MuiFormControlLabel-labelPlacementEnd css-obg4lq"><span class="MuiButtonBase-root MuiCheckbox-root MuiCheckbox-colorPrimary MuiCheckbox-sizeMedium PrivateSwitchBase-root MuiCheckbox-root MuiCheckbox-colorPrimary MuiCheckbox-sizeMedium MuiCheckbox-root MuiCheckbox-colorPrimary MuiCheckbox-sizeMedium css-btgiec"><input class="PrivateSwitchBase-input css-j8yymo" type="checkbox"/></span><span class="MuiTypography-root MuiTypography-body1 MuiFormControlLabel-label css-fyswvn">Remember me</span></label><button class="MuiButtonBase-root MuiButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeMedium MuiButton-containedSizeMedium MuiButton-colorPrimary MuiButton-fullWidth MuiButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeMedium MuiButton-containedSizeMedium MuiButton-colorPrimary MuiButton-fullWidth css-1jo074v" type="button">LOGIN</button><div class="MuiBox-root css-xi606m"><a>Forgot Password?</a></div></div></div></div></div>\n</body>' keyword_name='Select From List By Value' keyword_args=('id:_r_b_', 'Self') failed_locator='id:_r_b_' tried_locator_memory=[] locator_type='tbd' file_usage_ctx='*** Settings ***\nLibrary    SeleniumLibrary\nLibrary    SelfhealingAgents\nLibrary    initialize_async.py\n\nTest Setup       OpenTheBrowser\nTest Teardown        Close Browser\n\nResource        resource.robot\n\n*** Variables ***\n\n${time}    5 seconds\n${username}    claimantqa@gmail.com\n${password}    Camunda@123\n\n*** Test Cases ***\nAaseyaClaims\n    AISHealtCareLoginPage\n    RegisterPre-ClaimApproval\n    \n\n\n*** Keywords ***\n\nAISHealtCareLoginPage\n    Maximize browser Window\n    Set selenium implicit wait    ${time}\n    Click Button    Pre-Claim Authorization\n    Input Text    id:_r_6_    ${username}\n    Input Text    id:_r_7_    ${password}\n    Sleep    5 Seconds\n    Click Button    LOGIN\n    \n    \nRegisterPre-ClaimApproval\n    Set selenium implicit wait    ${time}\n    Input Text    id:_r_a_    John Doe\n    Select From List By Value    id:_r_b_    Self\n    Input Text    id:_r_c_    1321323'
+2026-02-12 11:35:58,663 - SelfhealingReports - INFO - Calling function: get_client_model with args: (), kwargs: {'provider': 'openai', 'model': 'gpt-4o-mini', 'cfg': Cfg(enable_self_healing=True, use_llm_for_locator_generation=True, max_retries=3, orchestrator_agent_provider='openai', orchestrator_agent_model='gpt-4o-mini', orchestrator_agent_temperature=0.1, locator_agent_provider='openai', locator_agent_model='gpt-4o-mini', locator_agent_temperature=0.1, request_limit=5, total_tokens_limit=6000, locator_type='css', report_directory=None, is_rerun_activated=False, azure_api_key='<REDACTED API Key>', azure_api_version=None, azure_endpoint='<REDACTED API Endpoint>', openai_api_key='<REDACTED API Key>', base_url='<REDACTED BASE URL>', litellm_api_key='<REDACTED API Key>')}
+2026-02-12 11:35:59,633 - SelfhealingReports - INFO - Function get_client_model returned: OpenAIModel()
+2026-02-12 11:35:59,637 - SelfhealingReports - INFO - Calling function: get_client_model with args: (), kwargs: {'provider': 'openai', 'model': 'gpt-4o-mini', 'cfg': Cfg(enable_self_healing=True, use_llm_for_locator_generation=True, max_retries=3, orchestrator_agent_provider='openai', orchestrator_agent_model='gpt-4o-mini', orchestrator_agent_temperature=0.1, locator_agent_provider='openai', locator_agent_model='gpt-4o-mini', locator_agent_temperature=0.1, request_limit=5, total_tokens_limit=6000, locator_type='css', report_directory=None, is_rerun_activated=False, azure_api_key='<REDACTED API Key>', azure_api_version=None, azure_endpoint='<REDACTED API Endpoint>', openai_api_key='<REDACTED API Key>', base_url='<REDACTED BASE URL>', litellm_api_key='<REDACTED API Key>')}
+2026-02-12 11:35:59,676 - SelfhealingReports - INFO - Function get_client_model returned: OpenAIModel()
+2026-02-12 11:35:59,686 - SelfhealingReports - INFO - Calling async function: run_async with args: (<SelfhealingAgents.self_healing_system.agents.orchestrator_agent.orchestrator_agent.OrchestratorAgent object at 0x00000217AB5C4590>, PromptPayload(robot_code_line='Select From List By Value id:_r_b_ Self', error_msg="List with locator 'id:_r_b_' not found.", dom_tree='<body>\n<div id="root"><div class="MuiBox-root css-1kdgnzq"><div class="MuiBox-root css-1pd736a"><img/><div class="MuiBox-root css-1u5ih8"><p class="MuiTypography-root MuiTypography-body1 css-1tkzlsh">Reliable health coverage for you and your family</p><p class="MuiTypography-root MuiTypography-body1 css-de2l7a">Our digital-first approach ensures that your health and claims are prioritized with professional care and minimal friction</p></div></div><div class="MuiBox-root css-qezfun"><div class="MuiBox-root css-58kkol"><div class="MuiBox-root css-3b2wtl"><img/></div><p class="MuiTypography-root MuiTypography-body1 css-a52qvt">Welcome Back</p><p class="MuiTypography-root MuiTypography-body1 css-97uudg">Please enter your credentials to access your secure portal</p><p class="MuiTypography-root MuiTypography-body1 css-1qwd97s">Username</p><div class="MuiFormControl-root MuiFormControl-fullWidth MuiTextField-root css-1rk0quz"><div class="MuiInputBase-root MuiOutlinedInput-root MuiInputBase-colorPrimary MuiInputBase-fullWidth Mui-focused MuiInputBase-formControl css-10uzne6"><input class="MuiInputBase-input MuiOutlinedInput-input css-1pk1fka" id="_r_a_" type="text" value="John Doe"/><fieldset class="MuiOutlinedInput-notchedOutline css-5v2ak0"><legend class="css-w4cd9x"><span class="notranslate">\u200b</span></legend></fieldset></div></div><p class="MuiTypography-root MuiTypography-body1 css-1qwd97s">Password</p><div class="MuiFormControl-root MuiFormControl-fullWidth MuiTextField-root css-18lile"><div class="MuiInputBase-root MuiOutlinedInput-root MuiInputBase-colorPrimary MuiInputBase-fullWidth MuiInputBase-formControl MuiInputBase-adornedEnd css-9t62qu"><input class="MuiInputBase-input MuiOutlinedInput-input MuiInputBase-inputAdornedEnd css-qwdxx6" id="_r_b_" type="password" value=""/><div class="MuiInputAdornment-root MuiInputAdornment-positionEnd MuiInputAdornment-outlined MuiInputAdornment-sizeMedium css-yxqbup"><button class="MuiButtonBase-root MuiIconButton-root MuiIconButton-sizeMedium css-mfslm7" type="button"></button></div><fieldset class="MuiOutlinedInput-notchedOutline css-5v2ak0"><legend class="css-w4cd9x"><span class="notranslate">\u200b</span></legend></fieldset></div></div><label class="MuiFormControlLabel-root MuiFormControlLabel-labelPlacementEnd css-obg4lq"><span class="MuiButtonBase-root MuiCheckbox-root MuiCheckbox-colorPrimary MuiCheckbox-sizeMedium PrivateSwitchBase-root MuiCheckbox-root MuiCheckbox-colorPrimary MuiCheckbox-sizeMedium MuiCheckbox-root MuiCheckbox-colorPrimary MuiCheckbox-sizeMedium css-btgiec"><input class="PrivateSwitchBase-input css-j8yymo" type="checkbox"/></span><span class="MuiTypography-root MuiTypography-body1 MuiFormControlLabel-label css-fyswvn">Remember me</span></label><button class="MuiButtonBase-root MuiButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeMedium MuiButton-containedSizeMedium MuiButton-colorPrimary MuiButton-fullWidth MuiButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeMedium MuiButton-containedSizeMedium MuiButton-colorPrimary MuiButton-fullWidth css-1jo074v" type="button">LOGIN</button><div class="MuiBox-root css-xi606m"><a>Forgot Password?</a></div></div></div></div></div>\n</body>', keyword_name='Select From List By Value', keyword_args=('id:_r_b_', 'Self'), failed_locator='id:_r_b_', tried_locator_memory=[], locator_type='css', file_usage_ctx='*** Settings ***\nLibrary    SeleniumLibrary\nLibrary    SelfhealingAgents\nLibrary    initialize_async.py\n\nTest Setup       OpenTheBrowser\nTest Teardown        Close Browser\n\nResource        resource.robot\n\n*** Variables ***\n\n${time}    5 seconds\n${username}    claimantqa@gmail.com\n${password}    Camunda@123\n\n*** Test Cases ***\nAaseyaClaims\n    AISHealtCareLoginPage\n    RegisterPre-ClaimApproval\n    \n\n\n*** Keywords ***\n\nAISHealtCareLoginPage\n    Maximize browser Window\n    Set selenium implicit wait    ${time}\n    Click Button    Pre-Claim Authorization\n    Input Text    id:_r_6_    ${username}\n    Input Text    id:_r_7_    ${password}\n    Sleep    5 Seconds\n    Click Button    LOGIN\n    \n    \nRegisterPre-ClaimApproval\n    Set selenium implicit wait    ${time}\n    Input Text    id:_r_a_    John Doe\n    Select From List By Value    id:_r_b_    Self\n    Input Text    id:_r_c_    1321323')), kwargs: {}
+2026-02-12 11:35:59,692 - SelfhealingReports - ERROR - Function run_async raised an exception:
+Traceback (most recent call last):
+  File "d:\EuroControl\.venv\Lib\site-packages\SeleniumLibrary\__init__.py", line 676, in run_keyword
+    return DynamicCore.run_keyword(self, name, args, kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "d:\EuroControl\.venv\Lib\site-packages\robotlibcore\core\dynamic.py", line 25, in run_keyword
+    return self.keywords[name](*args, **(kwargs or {}))
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "d:\EuroControl\.venv\Lib\site-packages\SeleniumLibrary\keywords\selectelement.py", line 251, in select_from_list_by_value
+    select = self._get_select_list(locator)
+  File "d:\EuroControl\.venv\Lib\site-packages\SeleniumLibrary\keywords\selectelement.py", line 372, in _get_select_list
+    el = self.find_element(locator, tag="list")
+  File "d:\EuroControl\.venv\Lib\site-packages\SeleniumLibrary\base\context.py", line 82, in find_element
+    return self.element_finder.find(locator, tag, True, required, parent)
+           ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "d:\EuroControl\.venv\Lib\site-packages\SeleniumLibrary\locators\elementfinder.py", line 93, in find
+    return self._find(locators[-1], tag, first_only, required, element)
+           ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "d:\EuroControl\.venv\Lib\site-packages\SeleniumLibrary\locators\elementfinder.py", line 125, in _find
+    raise ElementNotFound(f"{element_type} with locator '{locator}' not found.")
+SeleniumLibrary.errors.ElementNotFound: List with locator 'id:_r_b_' not found.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "d:\EuroControl\.venv\Lib\site-packages\SelfhealingAgents\utils\logging.py", line 81, in async_wrapper
+    result: Any = await func(*args, **kwargs)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "d:\EuroControl\.venv\Lib\site-packages\SelfhealingAgents\self_healing_system\agents\orchestrator_agent\orchestrator_agent.py", line 77, in run_async
+    response: AgentRunResult = await self._agent.run(
+                               ^^^^^^^^^^^^^^^^^^^^^^
+    ...<4 lines>...
+    )
+    ^
+  File "d:\EuroControl\.venv\Lib\site-packages\pydantic_ai\agent\abstract.py", line 259, in run
+    async with self.iter(
+               ~~~~~~~~~^
+        user_prompt=user_prompt,
+        ^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<11 lines>...
+        builtin_tools=builtin_tools,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ) as agent_run:
+    ^
+  File "C:\Users\kavita.chonkar\AppData\Local\Python\pythoncore-3.14-64\Lib\contextlib.py", line 214, in __aenter__
+    return await anext(self.gen)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "d:\EuroControl\.venv\Lib\site-packages\pydantic_ai\agent\__init__.py", line 722, in iter
+    graph.iter(
+    ~~~~~~~~~~^
+        inputs=user_prompt_node,
+        ^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<3 lines>...
+        infer_name=False,
+        ^^^^^^^^^^^^^^^^^
+    ) as graph_run,
+    ^
+  File "C:\Users\kavita.chonkar\AppData\Local\Python\pythoncore-3.14-64\Lib\contextlib.py", line 214, in __aenter__
+    return await anext(self.gen)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "d:\EuroControl\.venv\Lib\site-packages\pydantic_graph\beta\graph.py", line 270, in iter
+    async with GraphRun[StateT, DepsT, OutputT](
+               ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        graph=self,
+        ^^^^^^^^^^^
+    ...<3 lines>...
+        traceparent=traceparent,
+        ^^^^^^^^^^^^^^^^^^^^^^^^
+    ) as graph_run:
+    ^
+  File "C:\Users\kavita.chonkar\AppData\Local\Python\pythoncore-3.14-64\Lib\typing.py", line 1221, in __call__
+    result = self.__origin__(*args, **kwargs)
+  File "d:\EuroControl\.venv\Lib\site-packages\pydantic_graph\beta\graph.py", line 402, in __init__
+    self._iterator_task_group = create_task_group()
+                                ~~~~~~~~~~~~~~~~~^^
+  File "d:\EuroControl\.venv\Lib\site-packages\anyio\_core\_tasks.py", line 173, in create_task_group
+    return get_async_backend().create_task_group()
+           ~~~~~~~~~~~~~~~~~^^
+  File "d:\EuroControl\.venv\Lib\site-packages\anyio\_core\_eventloop.py", line 189, in get_async_backend
+    raise NoEventLoopError(
+    ...<2 lines>...
+    )
+anyio.NoEventLoopError: Not currently running on any asynchronous event loop. Available async backends: asyncio, trio
+2026-02-12 11:35:59,745 - SelfhealingReports - ERROR - Function kickoff_healing raised an exception:
+Traceback (most recent call last):
+  File "d:\EuroControl\.venv\Lib\site-packages\SeleniumLibrary\__init__.py", line 676, in run_keyword
+    return DynamicCore.run_keyword(self, name, args, kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "d:\EuroControl\.venv\Lib\site-packages\robotlibcore\core\dynamic.py", line 25, in run_keyword
+    return self.keywords[name](*args, **(kwargs or {}))
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "d:\EuroControl\.venv\Lib\site-packages\SeleniumLibrary\keywords\selectelement.py", line 251, in select_from_list_by_value
+    select = self._get_select_list(locator)
+  File "d:\EuroControl\.venv\Lib\site-packages\SeleniumLibrary\keywords\selectelement.py", line 372, in _get_select_list
+    el = self.find_element(locator, tag="list")
+  File "d:\EuroControl\.venv\Lib\site-packages\SeleniumLibrary\base\context.py", line 82, in find_element
+    return self.element_finder.find(locator, tag, True, required, parent)
+           ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "d:\EuroControl\.venv\Lib\site-packages\SeleniumLibrary\locators\elementfinder.py", line 93, in find
+    return self._find(locators[-1], tag, first_only, required, element)
+           ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "d:\EuroControl\.venv\Lib\site-packages\SeleniumLibrary\locators\elementfinder.py", line 125, in _find
+    raise ElementNotFound(f"{element_type} with locator '{locator}' not found.")
+SeleniumLibrary.errors.ElementNotFound: List with locator 'id:_r_b_' not found.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "d:\EuroControl\.venv\Lib\site-packages\SelfhealingAgents\utils\logging.py", line 96, in sync_wrapper
+    result: Any = func(*args, **kwargs)
+                  ~~~~^^^^^^^^^^^^^^^^^
+  File "d:\EuroControl\.venv\Lib\site-packages\SelfhealingAgents\self_healing_system\kickoff_multi_agent_system.py", line 70, in kickoff_healing
+    response = asyncio.get_event_loop().run_until_complete(
+        orchestrator_agent.run_async(robot_ctx_payload)
+    )
+  File "d:\EuroControl\.venv\Lib\site-packages\nest_asyncio.py", line 98, in run_until_complete
+    return f.result()
+           ~~~~~~~~^^
+  File "C:\Users\kavita.chonkar\AppData\Local\Python\pythoncore-3.14-64\Lib\asyncio\futures.py", line 208, in result
+    raise self._exception.with_traceback(self._exception_tb)
+  File "C:\Users\kavita.chonkar\AppData\Local\Python\pythoncore-3.14-64\Lib\asyncio\tasks.py", line 289, in __step_run_and_handle_result
+    result = coro.send(None)
+  File "d:\EuroControl\.venv\Lib\site-packages\SelfhealingAgents\utils\logging.py", line 81, in async_wrapper
+    result: Any = await func(*args, **kwargs)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "d:\EuroControl\.venv\Lib\site-packages\SelfhealingAgents\self_healing_system\agents\orchestrator_agent\orchestrator_agent.py", line 77, in run_async
+    response: AgentRunResult = await self._agent.run(
+                               ^^^^^^^^^^^^^^^^^^^^^^
+    ...<4 lines>...
+    )
+    ^
+  File "d:\EuroControl\.venv\Lib\site-packages\pydantic_ai\agent\abstract.py", line 259, in run
+    async with self.iter(
+               ~~~~~~~~~^
+        user_prompt=user_prompt,
+        ^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<11 lines>...
+        builtin_tools=builtin_tools,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ) as agent_run:
+    ^
+  File "C:\Users\kavita.chonkar\AppData\Local\Python\pythoncore-3.14-64\Lib\contextlib.py", line 214, in __aenter__
+    return await anext(self.gen)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "d:\EuroControl\.venv\Lib\site-packages\pydantic_ai\agent\__init__.py", line 722, in iter
+    graph.iter(
+    ~~~~~~~~~~^
+        inputs=user_prompt_node,
+        ^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<3 lines>...
+        infer_name=False,
+        ^^^^^^^^^^^^^^^^^
+    ) as graph_run,
+    ^
+  File "C:\Users\kavita.chonkar\AppData\Local\Python\pythoncore-3.14-64\Lib\contextlib.py", line 214, in __aenter__
+    return await anext(self.gen)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "d:\EuroControl\.venv\Lib\site-packages\pydantic_graph\beta\graph.py", line 270, in iter
+    async with GraphRun[StateT, DepsT, OutputT](
+               ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        graph=self,
+        ^^^^^^^^^^^
+    ...<3 lines>...
+        traceparent=traceparent,
+        ^^^^^^^^^^^^^^^^^^^^^^^^
+    ) as graph_run:
+    ^
+  File "C:\Users\kavita.chonkar\AppData\Local\Python\pythoncore-3.14-64\Lib\typing.py", line 1221, in __call__
+    result = self.__origin__(*args, **kwargs)
+  File "d:\EuroControl\.venv\Lib\site-packages\pydantic_graph\beta\graph.py", line 402, in __init__
+    self._iterator_task_group = create_task_group()
+                                ~~~~~~~~~~~~~~~~~^^
+  File "d:\EuroControl\.venv\Lib\site-packages\anyio\_core\_tasks.py", line 173, in create_task_group
+    return get_async_backend().create_task_group()
+           ~~~~~~~~~~~~~~~~~^^
+  File "d:\EuroControl\.venv\Lib\site-packages\anyio\_core\_eventloop.py", line 189, in get_async_backend
+    raise NoEventLoopError(
+    ...<2 lines>...
+    )
+anyio.NoEventLoopError: Not currently running on any asynchronous event loop. Available async backends: asyncio, trio
+2026-02-12 11:45:06,160 - SelfhealingReports - INFO - Calling function: kickoff_healing with args: (robot.running.Keyword(name='Select From List By Value', args=('id:_r_b_', 'Self'), assign=()), robot.result.Keyword(name='Select From List By Value', args=('id:_r_b_', 'Self'), assign=())), kwargs: {'cfg': Cfg(enable_self_healing=True, use_llm_for_locator_generation=True, max_retries=3, orchestrator_agent_provider='openai', orchestrator_agent_model='gpt-4o-mini', orchestrator_agent_temperature=0.1, locator_agent_provider='openai', locator_agent_model='gpt-4o-mini', locator_agent_temperature=0.1, request_limit=5, total_tokens_limit=6000, locator_type='css', report_directory=None, is_rerun_activated=False, azure_api_key='<REDACTED API Key>', azure_api_version=None, azure_endpoint='<REDACTED API Endpoint>', openai_api_key='<REDACTED API Key>', base_url='<REDACTED BASE URL>', litellm_api_key='<REDACTED API Key>'), 'tried_locator_memory': []}
+2026-02-12 11:45:06,161 - SelfhealingReports - INFO - Calling function: get_context_payload with args: (robot.running.Keyword(name='Select From List By Value', args=('id:_r_b_', 'Self'), assign=()), robot.result.Keyword(name='Select From List By Value', args=('id:_r_b_', 'Self'), assign=()), <SelfhealingAgents.self_healing_system.context_retrieving.library_dom_utils.selenium_dom_utils.SeleniumDomUtils object at 0x000002558211CC20>), kwargs: {}
+2026-02-12 11:45:06,181 - SelfhealingReports - INFO - Function get_context_payload returned: robot_code_line='Select From List By Value id:_r_b_ Self' error_msg="List with locator 'id:_r_b_' not found." dom_tree='<body>\n<div id="root"><div class="MuiBox-root css-1kdgnzq"><div class="MuiBox-root css-1pd736a"><img/><div class="MuiBox-root css-1u5ih8"><p class="MuiTypography-root MuiTypography-body1 css-1tkzlsh">Reliable health coverage for you and your family</p><p class="MuiTypography-root MuiTypography-body1 css-de2l7a">Our digital-first approach ensures that your health and claims are prioritized with professional care and minimal friction</p></div></div><div class="MuiBox-root css-qezfun"><div class="MuiBox-root css-58kkol"><div class="MuiBox-root css-3b2wtl"><img/></div><p class="MuiTypography-root MuiTypography-body1 css-a52qvt">Welcome Back</p><p class="MuiTypography-root MuiTypography-body1 css-97uudg">Please enter your credentials to access your secure portal</p><p class="MuiTypography-root MuiTypography-body1 css-1qwd97s">Username</p><div class="MuiFormControl-root MuiFormControl-fullWidth MuiTextField-root css-1rk0quz"><div class="MuiInputBase-root MuiOutlinedInput-root MuiInputBase-colorPrimary MuiInputBase-fullWidth Mui-focused MuiInputBase-formControl css-10uzne6"><input class="MuiInputBase-input MuiOutlinedInput-input css-1pk1fka" id="_r_a_" type="text" value="John Doe"/><fieldset class="MuiOutlinedInput-notchedOutline css-5v2ak0"><legend class="css-w4cd9x"><span class="notranslate">\u200b</span></legend></fieldset></div></div><p class="MuiTypography-root MuiTypography-body1 css-1qwd97s">Password</p><div class="MuiFormControl-root MuiFormControl-fullWidth MuiTextField-root css-18lile"><div class="MuiInputBase-root MuiOutlinedInput-root MuiInputBase-colorPrimary MuiInputBase-fullWidth MuiInputBase-formControl MuiInputBase-adornedEnd css-9t62qu"><input class="MuiInputBase-input MuiOutlinedInput-input MuiInputBase-inputAdornedEnd css-qwdxx6" id="_r_b_" type="password" value=""/><div class="MuiInputAdornment-root MuiInputAdornment-positionEnd MuiInputAdornment-outlined MuiInputAdornment-sizeMedium css-yxqbup"><button class="MuiButtonBase-root MuiIconButton-root MuiIconButton-sizeMedium css-mfslm7" type="button"></button></div><fieldset class="MuiOutlinedInput-notchedOutline css-5v2ak0"><legend class="css-w4cd9x"><span class="notranslate">\u200b</span></legend></fieldset></div></div><label class="MuiFormControlLabel-root MuiFormControlLabel-labelPlacementEnd css-obg4lq"><span class="MuiButtonBase-root MuiCheckbox-root MuiCheckbox-colorPrimary MuiCheckbox-sizeMedium PrivateSwitchBase-root MuiCheckbox-root MuiCheckbox-colorPrimary MuiCheckbox-sizeMedium MuiCheckbox-root MuiCheckbox-colorPrimary MuiCheckbox-sizeMedium css-btgiec"><input class="PrivateSwitchBase-input css-j8yymo" type="checkbox"/></span><span class="MuiTypography-root MuiTypography-body1 MuiFormControlLabel-label css-fyswvn">Remember me</span></label><button class="MuiButtonBase-root MuiButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeMedium MuiButton-containedSizeMedium MuiButton-colorPrimary MuiButton-fullWidth MuiButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeMedium MuiButton-containedSizeMedium MuiButton-colorPrimary MuiButton-fullWidth css-1jo074v" type="button">LOGIN</button><div class="MuiBox-root css-xi606m"><a>Forgot Password?</a></div></div></div></div></div>\n</body>' keyword_name='Select From List By Value' keyword_args=('id:_r_b_', 'Self') failed_locator='id:_r_b_' tried_locator_memory=[] locator_type='tbd' file_usage_ctx='*** Settings ***\nLibrary    SeleniumLibrary\nLibrary    SelfhealingAgents\nLibrary    ./fix_loop.py\n\nTest Setup       OpenTheBrowser\nTest Teardown        Close Browser\n\nResource        resource.robot\n\n*** Variables ***\n\n${time}    5 seconds\n${username}    claimantqa@gmail.com\n${password}    Camunda@123\n\n*** Test Cases ***\nAaseyaClaims\n    AISHealtCareLoginPage\n    RegisterPre-ClaimApproval\n    \n\n\n*** Keywords ***\n\nAISHealtCareLoginPage\n    Maximize browser Window\n    Set selenium implicit wait    ${time}\n    Click Button    Pre-Claim Authorization\n    Input Text    id:_r_6_    ${username}\n    Input Text    id:_r_7_    ${password}\n    Sleep    5 Seconds\n    Click Button    LOGIN\n    \n    \nRegisterPre-ClaimApproval\n    Set selenium implicit wait    ${time}\n    Input Text    id:_r_a_    John Doe\n    Select From List By Value    id:_r_b_    Self\n    Input Text    id:_r_c_    1321323'
+2026-02-12 11:45:06,181 - SelfhealingReports - INFO - Calling function: get_client_model with args: (), kwargs: {'provider': 'openai', 'model': 'gpt-4o-mini', 'cfg': Cfg(enable_self_healing=True, use_llm_for_locator_generation=True, max_retries=3, orchestrator_agent_provider='openai', orchestrator_agent_model='gpt-4o-mini', orchestrator_agent_temperature=0.1, locator_agent_provider='openai', locator_agent_model='gpt-4o-mini', locator_agent_temperature=0.1, request_limit=5, total_tokens_limit=6000, locator_type='css', report_directory=None, is_rerun_activated=False, azure_api_key='<REDACTED API Key>', azure_api_version=None, azure_endpoint='<REDACTED API Endpoint>', openai_api_key='<REDACTED API Key>', base_url='<REDACTED BASE URL>', litellm_api_key='<REDACTED API Key>')}
+2026-02-12 11:45:07,173 - SelfhealingReports - INFO - Function get_client_model returned: OpenAIModel()
+2026-02-12 11:45:07,177 - SelfhealingReports - INFO - Calling function: get_client_model with args: (), kwargs: {'provider': 'openai', 'model': 'gpt-4o-mini', 'cfg': Cfg(enable_self_healing=True, use_llm_for_locator_generation=True, max_retries=3, orchestrator_agent_provider='openai', orchestrator_agent_model='gpt-4o-mini', orchestrator_agent_temperature=0.1, locator_agent_provider='openai', locator_agent_model='gpt-4o-mini', locator_agent_temperature=0.1, request_limit=5, total_tokens_limit=6000, locator_type='css', report_directory=None, is_rerun_activated=False, azure_api_key='<REDACTED API Key>', azure_api_version=None, azure_endpoint='<REDACTED API Endpoint>', openai_api_key='<REDACTED API Key>', base_url='<REDACTED BASE URL>', litellm_api_key='<REDACTED API Key>')}
+2026-02-12 11:45:07,210 - SelfhealingReports - INFO - Function get_client_model returned: OpenAIModel()
+2026-02-12 11:45:07,219 - SelfhealingReports - INFO - Calling async function: run_async with args: (<SelfhealingAgents.self_healing_system.agents.orchestrator_agent.orchestrator_agent.OrchestratorAgent object at 0x00000255829002F0>, PromptPayload(robot_code_line='Select From List By Value id:_r_b_ Self', error_msg="List with locator 'id:_r_b_' not found.", dom_tree='<body>\n<div id="root"><div class="MuiBox-root css-1kdgnzq"><div class="MuiBox-root css-1pd736a"><img/><div class="MuiBox-root css-1u5ih8"><p class="MuiTypography-root MuiTypography-body1 css-1tkzlsh">Reliable health coverage for you and your family</p><p class="MuiTypography-root MuiTypography-body1 css-de2l7a">Our digital-first approach ensures that your health and claims are prioritized with professional care and minimal friction</p></div></div><div class="MuiBox-root css-qezfun"><div class="MuiBox-root css-58kkol"><div class="MuiBox-root css-3b2wtl"><img/></div><p class="MuiTypography-root MuiTypography-body1 css-a52qvt">Welcome Back</p><p class="MuiTypography-root MuiTypography-body1 css-97uudg">Please enter your credentials to access your secure portal</p><p class="MuiTypography-root MuiTypography-body1 css-1qwd97s">Username</p><div class="MuiFormControl-root MuiFormControl-fullWidth MuiTextField-root css-1rk0quz"><div class="MuiInputBase-root MuiOutlinedInput-root MuiInputBase-colorPrimary MuiInputBase-fullWidth Mui-focused MuiInputBase-formControl css-10uzne6"><input class="MuiInputBase-input MuiOutlinedInput-input css-1pk1fka" id="_r_a_" type="text" value="John Doe"/><fieldset class="MuiOutlinedInput-notchedOutline css-5v2ak0"><legend class="css-w4cd9x"><span class="notranslate">\u200b</span></legend></fieldset></div></div><p class="MuiTypography-root MuiTypography-body1 css-1qwd97s">Password</p><div class="MuiFormControl-root MuiFormControl-fullWidth MuiTextField-root css-18lile"><div class="MuiInputBase-root MuiOutlinedInput-root MuiInputBase-colorPrimary MuiInputBase-fullWidth MuiInputBase-formControl MuiInputBase-adornedEnd css-9t62qu"><input class="MuiInputBase-input MuiOutlinedInput-input MuiInputBase-inputAdornedEnd css-qwdxx6" id="_r_b_" type="password" value=""/><div class="MuiInputAdornment-root MuiInputAdornment-positionEnd MuiInputAdornment-outlined MuiInputAdornment-sizeMedium css-yxqbup"><button class="MuiButtonBase-root MuiIconButton-root MuiIconButton-sizeMedium css-mfslm7" type="button"></button></div><fieldset class="MuiOutlinedInput-notchedOutline css-5v2ak0"><legend class="css-w4cd9x"><span class="notranslate">\u200b</span></legend></fieldset></div></div><label class="MuiFormControlLabel-root MuiFormControlLabel-labelPlacementEnd css-obg4lq"><span class="MuiButtonBase-root MuiCheckbox-root MuiCheckbox-colorPrimary MuiCheckbox-sizeMedium PrivateSwitchBase-root MuiCheckbox-root MuiCheckbox-colorPrimary MuiCheckbox-sizeMedium MuiCheckbox-root MuiCheckbox-colorPrimary MuiCheckbox-sizeMedium css-btgiec"><input class="PrivateSwitchBase-input css-j8yymo" type="checkbox"/></span><span class="MuiTypography-root MuiTypography-body1 MuiFormControlLabel-label css-fyswvn">Remember me</span></label><button class="MuiButtonBase-root MuiButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeMedium MuiButton-containedSizeMedium MuiButton-colorPrimary MuiButton-fullWidth MuiButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeMedium MuiButton-containedSizeMedium MuiButton-colorPrimary MuiButton-fullWidth css-1jo074v" type="button">LOGIN</button><div class="MuiBox-root css-xi606m"><a>Forgot Password?</a></div></div></div></div></div>\n</body>', keyword_name='Select From List By Value', keyword_args=('id:_r_b_', 'Self'), failed_locator='id:_r_b_', tried_locator_memory=[], locator_type='css', file_usage_ctx='*** Settings ***\nLibrary    SeleniumLibrary\nLibrary    SelfhealingAgents\nLibrary    ./fix_loop.py\n\nTest Setup       OpenTheBrowser\nTest Teardown        Close Browser\n\nResource        resource.robot\n\n*** Variables ***\n\n${time}    5 seconds\n${username}    claimantqa@gmail.com\n${password}    Camunda@123\n\n*** Test Cases ***\nAaseyaClaims\n    AISHealtCareLoginPage\n    RegisterPre-ClaimApproval\n    \n\n\n*** Keywords ***\n\nAISHealtCareLoginPage\n    Maximize browser Window\n    Set selenium implicit wait    ${time}\n    Click Button    Pre-Claim Authorization\n    Input Text    id:_r_6_    ${username}\n    Input Text    id:_r_7_    ${password}\n    Sleep    5 Seconds\n    Click Button    LOGIN\n    \n    \nRegisterPre-ClaimApproval\n    Set selenium implicit wait    ${time}\n    Input Text    id:_r_a_    John Doe\n    Select From List By Value    id:_r_b_    Self\n    Input Text    id:_r_c_    1321323')), kwargs: {}
+2026-02-12 11:45:07,223 - SelfhealingReports - ERROR - Function run_async raised an exception:
+Traceback (most recent call last):
+  File "D:\EuroControl\.venv\Lib\site-packages\SeleniumLibrary\__init__.py", line 676, in run_keyword
+    return DynamicCore.run_keyword(self, name, args, kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\EuroControl\.venv\Lib\site-packages\robotlibcore\core\dynamic.py", line 25, in run_keyword
+    return self.keywords[name](*args, **(kwargs or {}))
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\EuroControl\.venv\Lib\site-packages\SeleniumLibrary\keywords\selectelement.py", line 251, in select_from_list_by_value
+    select = self._get_select_list(locator)
+  File "D:\EuroControl\.venv\Lib\site-packages\SeleniumLibrary\keywords\selectelement.py", line 372, in _get_select_list
+    el = self.find_element(locator, tag="list")
+  File "D:\EuroControl\.venv\Lib\site-packages\SeleniumLibrary\base\context.py", line 82, in find_element
+    return self.element_finder.find(locator, tag, True, required, parent)
+           ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\EuroControl\.venv\Lib\site-packages\SeleniumLibrary\locators\elementfinder.py", line 93, in find
+    return self._find(locators[-1], tag, first_only, required, element)
+           ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\EuroControl\.venv\Lib\site-packages\SeleniumLibrary\locators\elementfinder.py", line 125, in _find
+    raise ElementNotFound(f"{element_type} with locator '{locator}' not found.")
+SeleniumLibrary.errors.ElementNotFound: List with locator 'id:_r_b_' not found.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\EuroControl\.venv\Lib\site-packages\SelfhealingAgents\utils\logging.py", line 81, in async_wrapper
+    result: Any = await func(*args, **kwargs)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\EuroControl\.venv\Lib\site-packages\SelfhealingAgents\self_healing_system\agents\orchestrator_agent\orchestrator_agent.py", line 77, in run_async
+    response: AgentRunResult = await self._agent.run(
+                               ^^^^^^^^^^^^^^^^^^^^^^
+    ...<4 lines>...
+    )
+    ^
+  File "D:\EuroControl\.venv\Lib\site-packages\pydantic_ai\agent\abstract.py", line 259, in run
+    async with self.iter(
+               ~~~~~~~~~^
+        user_prompt=user_prompt,
+        ^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<11 lines>...
+        builtin_tools=builtin_tools,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ) as agent_run:
+    ^
+  File "C:\Users\kavita.chonkar\AppData\Local\Python\pythoncore-3.14-64\Lib\contextlib.py", line 214, in __aenter__
+    return await anext(self.gen)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\EuroControl\.venv\Lib\site-packages\pydantic_ai\agent\__init__.py", line 722, in iter
+    graph.iter(
+    ~~~~~~~~~~^
+        inputs=user_prompt_node,
+        ^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<3 lines>...
+        infer_name=False,
+        ^^^^^^^^^^^^^^^^^
+    ) as graph_run,
+    ^
+  File "C:\Users\kavita.chonkar\AppData\Local\Python\pythoncore-3.14-64\Lib\contextlib.py", line 214, in __aenter__
+    return await anext(self.gen)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\EuroControl\.venv\Lib\site-packages\pydantic_graph\beta\graph.py", line 270, in iter
+    async with GraphRun[StateT, DepsT, OutputT](
+               ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        graph=self,
+        ^^^^^^^^^^^
+    ...<3 lines>...
+        traceparent=traceparent,
+        ^^^^^^^^^^^^^^^^^^^^^^^^
+    ) as graph_run:
+    ^
+  File "C:\Users\kavita.chonkar\AppData\Local\Python\pythoncore-3.14-64\Lib\typing.py", line 1221, in __call__
+    result = self.__origin__(*args, **kwargs)
+  File "D:\EuroControl\.venv\Lib\site-packages\pydantic_graph\beta\graph.py", line 402, in __init__
+    self._iterator_task_group = create_task_group()
+                                ~~~~~~~~~~~~~~~~~^^
+  File "D:\EuroControl\.venv\Lib\site-packages\anyio\_core\_tasks.py", line 173, in create_task_group
+    return get_async_backend().create_task_group()
+           ~~~~~~~~~~~~~~~~~^^
+  File "D:\EuroControl\.venv\Lib\site-packages\anyio\_core\_eventloop.py", line 189, in get_async_backend
+    raise NoEventLoopError(
+    ...<2 lines>...
+    )
+anyio.NoEventLoopError: Not currently running on any asynchronous event loop. Available async backends: asyncio, trio
+2026-02-12 11:45:07,247 - SelfhealingReports - ERROR - Function kickoff_healing raised an exception:
+Traceback (most recent call last):
+  File "D:\EuroControl\.venv\Lib\site-packages\SeleniumLibrary\__init__.py", line 676, in run_keyword
+    return DynamicCore.run_keyword(self, name, args, kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\EuroControl\.venv\Lib\site-packages\robotlibcore\core\dynamic.py", line 25, in run_keyword
+    return self.keywords[name](*args, **(kwargs or {}))
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\EuroControl\.venv\Lib\site-packages\SeleniumLibrary\keywords\selectelement.py", line 251, in select_from_list_by_value
+    select = self._get_select_list(locator)
+  File "D:\EuroControl\.venv\Lib\site-packages\SeleniumLibrary\keywords\selectelement.py", line 372, in _get_select_list
+    el = self.find_element(locator, tag="list")
+  File "D:\EuroControl\.venv\Lib\site-packages\SeleniumLibrary\base\context.py", line 82, in find_element
+    return self.element_finder.find(locator, tag, True, required, parent)
+           ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\EuroControl\.venv\Lib\site-packages\SeleniumLibrary\locators\elementfinder.py", line 93, in find
+    return self._find(locators[-1], tag, first_only, required, element)
+           ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\EuroControl\.venv\Lib\site-packages\SeleniumLibrary\locators\elementfinder.py", line 125, in _find
+    raise ElementNotFound(f"{element_type} with locator '{locator}' not found.")
+SeleniumLibrary.errors.ElementNotFound: List with locator 'id:_r_b_' not found.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\EuroControl\.venv\Lib\site-packages\SelfhealingAgents\utils\logging.py", line 96, in sync_wrapper
+    result: Any = func(*args, **kwargs)
+                  ~~~~^^^^^^^^^^^^^^^^^
+  File "D:\EuroControl\.venv\Lib\site-packages\SelfhealingAgents\self_healing_system\kickoff_multi_agent_system.py", line 70, in kickoff_healing
+    response = asyncio.get_event_loop().run_until_complete(
+        orchestrator_agent.run_async(robot_ctx_payload)
+    )
+  File "D:\EuroControl\.venv\Lib\site-packages\nest_asyncio.py", line 98, in run_until_complete
+    return f.result()
+           ~~~~~~~~^^
+  File "C:\Users\kavita.chonkar\AppData\Local\Python\pythoncore-3.14-64\Lib\asyncio\futures.py", line 208, in result
+    raise self._exception.with_traceback(self._exception_tb)
+  File "C:\Users\kavita.chonkar\AppData\Local\Python\pythoncore-3.14-64\Lib\asyncio\tasks.py", line 289, in __step_run_and_handle_result
+    result = coro.send(None)
+  File "D:\EuroControl\.venv\Lib\site-packages\SelfhealingAgents\utils\logging.py", line 81, in async_wrapper
+    result: Any = await func(*args, **kwargs)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\EuroControl\.venv\Lib\site-packages\SelfhealingAgents\self_healing_system\agents\orchestrator_agent\orchestrator_agent.py", line 77, in run_async
+    response: AgentRunResult = await self._agent.run(
+                               ^^^^^^^^^^^^^^^^^^^^^^
+    ...<4 lines>...
+    )
+    ^
+  File "D:\EuroControl\.venv\Lib\site-packages\pydantic_ai\agent\abstract.py", line 259, in run
+    async with self.iter(
+               ~~~~~~~~~^
+        user_prompt=user_prompt,
+        ^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<11 lines>...
+        builtin_tools=builtin_tools,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ) as agent_run:
+    ^
+  File "C:\Users\kavita.chonkar\AppData\Local\Python\pythoncore-3.14-64\Lib\contextlib.py", line 214, in __aenter__
+    return await anext(self.gen)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\EuroControl\.venv\Lib\site-packages\pydantic_ai\agent\__init__.py", line 722, in iter
+    graph.iter(
+    ~~~~~~~~~~^
+        inputs=user_prompt_node,
+        ^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<3 lines>...
+        infer_name=False,
+        ^^^^^^^^^^^^^^^^^
+    ) as graph_run,
+    ^
+  File "C:\Users\kavita.chonkar\AppData\Local\Python\pythoncore-3.14-64\Lib\contextlib.py", line 214, in __aenter__
+    return await anext(self.gen)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\EuroControl\.venv\Lib\site-packages\pydantic_graph\beta\graph.py", line 270, in iter
+    async with GraphRun[StateT, DepsT, OutputT](
+               ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        graph=self,
+        ^^^^^^^^^^^
+    ...<3 lines>...
+        traceparent=traceparent,
+        ^^^^^^^^^^^^^^^^^^^^^^^^
+    ) as graph_run:
+    ^
+  File "C:\Users\kavita.chonkar\AppData\Local\Python\pythoncore-3.14-64\Lib\typing.py", line 1221, in __call__
+    result = self.__origin__(*args, **kwargs)
+  File "D:\EuroControl\.venv\Lib\site-packages\pydantic_graph\beta\graph.py", line 402, in __init__
+    self._iterator_task_group = create_task_group()
+                                ~~~~~~~~~~~~~~~~~^^
+  File "D:\EuroControl\.venv\Lib\site-packages\anyio\_core\_tasks.py", line 173, in create_task_group
+    return get_async_backend().create_task_group()
+           ~~~~~~~~~~~~~~~~~^^
+  File "D:\EuroControl\.venv\Lib\site-packages\anyio\_core\_eventloop.py", line 189, in get_async_backend
+    raise NoEventLoopError(
+    ...<2 lines>...
+    )
+anyio.NoEventLoopError: Not currently running on any asynchronous event loop. Available async backends: asyncio, trio
+2026-02-12 11:50:38,863 - SelfhealingReports - INFO - Calling function: kickoff_healing with args: (robot.running.Keyword(name='Select From List By Value', args=('id:_r_b_', 'Self'), assign=()), robot.result.Keyword(name='Select From List By Value', args=('id:_r_b_', 'Self'), assign=())), kwargs: {'cfg': Cfg(enable_self_healing=True, use_llm_for_locator_generation=True, max_retries=3, orchestrator_agent_provider='openai', orchestrator_agent_model='gpt-4o-mini', orchestrator_agent_temperature=0.1, locator_agent_provider='openai', locator_agent_model='gpt-4o-mini', locator_agent_temperature=0.1, request_limit=5, total_tokens_limit=6000, locator_type='css', report_directory=None, is_rerun_activated=False, azure_api_key='<REDACTED API Key>', azure_api_version=None, azure_endpoint='<REDACTED API Endpoint>', openai_api_key='<REDACTED API Key>', base_url='<REDACTED BASE URL>', litellm_api_key='<REDACTED API Key>'), 'tried_locator_memory': []}
+2026-02-12 11:50:38,863 - SelfhealingReports - INFO - Calling function: get_context_payload with args: (robot.running.Keyword(name='Select From List By Value', args=('id:_r_b_', 'Self'), assign=()), robot.result.Keyword(name='Select From List By Value', args=('id:_r_b_', 'Self'), assign=()), <SelfhealingAgents.self_healing_system.context_retrieving.library_dom_utils.selenium_dom_utils.SeleniumDomUtils object at 0x000001C092208C20>), kwargs: {}
+2026-02-12 11:50:38,882 - SelfhealingReports - INFO - Function get_context_payload returned: robot_code_line='Select From List By Value id:_r_b_ Self' error_msg="List with locator 'id:_r_b_' not found." dom_tree='<body>\n<div id="root"><div class="MuiBox-root css-1kdgnzq"><div class="MuiBox-root css-1pd736a"><img/><div class="MuiBox-root css-1u5ih8"><p class="MuiTypography-root MuiTypography-body1 css-1tkzlsh">Reliable health coverage for you and your family</p><p class="MuiTypography-root MuiTypography-body1 css-de2l7a">Our digital-first approach ensures that your health and claims are prioritized with professional care and minimal friction</p></div></div><div class="MuiBox-root css-qezfun"><div class="MuiBox-root css-58kkol"><div class="MuiBox-root css-3b2wtl"><img/></div><p class="MuiTypography-root MuiTypography-body1 css-a52qvt">Welcome Back</p><p class="MuiTypography-root MuiTypography-body1 css-97uudg">Please enter your credentials to access your secure portal</p><p class="MuiTypography-root MuiTypography-body1 css-1qwd97s">Username</p><div class="MuiFormControl-root MuiFormControl-fullWidth MuiTextField-root css-1rk0quz"><div class="MuiInputBase-root MuiOutlinedInput-root MuiInputBase-colorPrimary MuiInputBase-fullWidth Mui-focused MuiInputBase-formControl css-10uzne6"><input class="MuiInputBase-input MuiOutlinedInput-input css-1pk1fka" id="_r_a_" type="text" value="John Doe"/><fieldset class="MuiOutlinedInput-notchedOutline css-5v2ak0"><legend class="css-w4cd9x"><span class="notranslate">\u200b</span></legend></fieldset></div></div><p class="MuiTypography-root MuiTypography-body1 css-1qwd97s">Password</p><div class="MuiFormControl-root MuiFormControl-fullWidth MuiTextField-root css-18lile"><div class="MuiInputBase-root MuiOutlinedInput-root MuiInputBase-colorPrimary MuiInputBase-fullWidth MuiInputBase-formControl MuiInputBase-adornedEnd css-9t62qu"><input class="MuiInputBase-input MuiOutlinedInput-input MuiInputBase-inputAdornedEnd css-qwdxx6" id="_r_b_" type="password" value=""/><div class="MuiInputAdornment-root MuiInputAdornment-positionEnd MuiInputAdornment-outlined MuiInputAdornment-sizeMedium css-yxqbup"><button class="MuiButtonBase-root MuiIconButton-root MuiIconButton-sizeMedium css-mfslm7" type="button"></button></div><fieldset class="MuiOutlinedInput-notchedOutline css-5v2ak0"><legend class="css-w4cd9x"><span class="notranslate">\u200b</span></legend></fieldset></div></div><label class="MuiFormControlLabel-root MuiFormControlLabel-labelPlacementEnd css-obg4lq"><span class="MuiButtonBase-root MuiCheckbox-root MuiCheckbox-colorPrimary MuiCheckbox-sizeMedium PrivateSwitchBase-root MuiCheckbox-root MuiCheckbox-colorPrimary MuiCheckbox-sizeMedium MuiCheckbox-root MuiCheckbox-colorPrimary MuiCheckbox-sizeMedium css-btgiec"><input class="PrivateSwitchBase-input css-j8yymo" type="checkbox"/></span><span class="MuiTypography-root MuiTypography-body1 MuiFormControlLabel-label css-fyswvn">Remember me</span></label><button class="MuiButtonBase-root MuiButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeMedium MuiButton-containedSizeMedium MuiButton-colorPrimary MuiButton-fullWidth MuiButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeMedium MuiButton-containedSizeMedium MuiButton-colorPrimary MuiButton-fullWidth css-1jo074v" type="button">LOGIN</button><div class="MuiBox-root css-xi606m"><a>Forgot Password?</a></div></div></div></div></div>\n</body>' keyword_name='Select From List By Value' keyword_args=('id:_r_b_', 'Self') failed_locator='id:_r_b_' tried_locator_memory=[] locator_type='tbd' file_usage_ctx='*** Settings ***\nLibrary    SeleniumLibrary\nLibrary    SelfhealingAgents\nLibrary    ./fix_loop.py\n\nTest Setup       OpenTheBrowser\nTest Teardown        Close Browser\n\nResource        resource.robot\n\n*** Variables ***\n\n${time}    5 seconds\n${username}    claimantqa@gmail.com\n${password}    Camunda@123\n\n*** Test Cases ***\nAaseyaClaims\n    AISHealtCareLoginPage        ${username}        ${password} \n    RegisterPre-ClaimApproval\n    \n\n\n*** Keywords ***\n\nAISHealtCareLoginPage\n    [arguments]        ${username}        ${password} \n    Maximize browser Window\n    Set selenium implicit wait    ${time}\n    Click Button    Pre-Claim Authorization\n    Input Text    id:_r_6_    ${username}\n    Input Text    id:_r_7_    ${password}\n    Sleep    5 Seconds\n    Click Button    LOGIN\n    \n    \nRegisterPre-ClaimApproval\n    Set selenium implicit wait    ${time}\n    Input Text    id:_r_a_    John Doe\n    Select From List By Value    id:_r_b_    Self\n    Input Text    id:_r_c_    1321323'
+2026-02-12 11:50:38,883 - SelfhealingReports - INFO - Calling function: get_client_model with args: (), kwargs: {'provider': 'openai', 'model': 'gpt-4o-mini', 'cfg': Cfg(enable_self_healing=True, use_llm_for_locator_generation=True, max_retries=3, orchestrator_agent_provider='openai', orchestrator_agent_model='gpt-4o-mini', orchestrator_agent_temperature=0.1, locator_agent_provider='openai', locator_agent_model='gpt-4o-mini', locator_agent_temperature=0.1, request_limit=5, total_tokens_limit=6000, locator_type='css', report_directory=None, is_rerun_activated=False, azure_api_key='<REDACTED API Key>', azure_api_version=None, azure_endpoint='<REDACTED API Endpoint>', openai_api_key='<REDACTED API Key>', base_url='<REDACTED BASE URL>', litellm_api_key='<REDACTED API Key>')}
+2026-02-12 11:50:39,876 - SelfhealingReports - INFO - Function get_client_model returned: OpenAIModel()
+2026-02-12 11:50:39,880 - SelfhealingReports - INFO - Calling function: get_client_model with args: (), kwargs: {'provider': 'openai', 'model': 'gpt-4o-mini', 'cfg': Cfg(enable_self_healing=True, use_llm_for_locator_generation=True, max_retries=3, orchestrator_agent_provider='openai', orchestrator_agent_model='gpt-4o-mini', orchestrator_agent_temperature=0.1, locator_agent_provider='openai', locator_agent_model='gpt-4o-mini', locator_agent_temperature=0.1, request_limit=5, total_tokens_limit=6000, locator_type='css', report_directory=None, is_rerun_activated=False, azure_api_key='<REDACTED API Key>', azure_api_version=None, azure_endpoint='<REDACTED API Endpoint>', openai_api_key='<REDACTED API Key>', base_url='<REDACTED BASE URL>', litellm_api_key='<REDACTED API Key>')}
+2026-02-12 11:50:39,914 - SelfhealingReports - INFO - Function get_client_model returned: OpenAIModel()
+2026-02-12 11:50:39,920 - SelfhealingReports - INFO - Calling async function: run_async with args: (<SelfhealingAgents.self_healing_system.agents.orchestrator_agent.orchestrator_agent.OrchestratorAgent object at 0x000001C0929F02F0>, PromptPayload(robot_code_line='Select From List By Value id:_r_b_ Self', error_msg="List with locator 'id:_r_b_' not found.", dom_tree='<body>\n<div id="root"><div class="MuiBox-root css-1kdgnzq"><div class="MuiBox-root css-1pd736a"><img/><div class="MuiBox-root css-1u5ih8"><p class="MuiTypography-root MuiTypography-body1 css-1tkzlsh">Reliable health coverage for you and your family</p><p class="MuiTypography-root MuiTypography-body1 css-de2l7a">Our digital-first approach ensures that your health and claims are prioritized with professional care and minimal friction</p></div></div><div class="MuiBox-root css-qezfun"><div class="MuiBox-root css-58kkol"><div class="MuiBox-root css-3b2wtl"><img/></div><p class="MuiTypography-root MuiTypography-body1 css-a52qvt">Welcome Back</p><p class="MuiTypography-root MuiTypography-body1 css-97uudg">Please enter your credentials to access your secure portal</p><p class="MuiTypography-root MuiTypography-body1 css-1qwd97s">Username</p><div class="MuiFormControl-root MuiFormControl-fullWidth MuiTextField-root css-1rk0quz"><div class="MuiInputBase-root MuiOutlinedInput-root MuiInputBase-colorPrimary MuiInputBase-fullWidth Mui-focused MuiInputBase-formControl css-10uzne6"><input class="MuiInputBase-input MuiOutlinedInput-input css-1pk1fka" id="_r_a_" type="text" value="John Doe"/><fieldset class="MuiOutlinedInput-notchedOutline css-5v2ak0"><legend class="css-w4cd9x"><span class="notranslate">\u200b</span></legend></fieldset></div></div><p class="MuiTypography-root MuiTypography-body1 css-1qwd97s">Password</p><div class="MuiFormControl-root MuiFormControl-fullWidth MuiTextField-root css-18lile"><div class="MuiInputBase-root MuiOutlinedInput-root MuiInputBase-colorPrimary MuiInputBase-fullWidth MuiInputBase-formControl MuiInputBase-adornedEnd css-9t62qu"><input class="MuiInputBase-input MuiOutlinedInput-input MuiInputBase-inputAdornedEnd css-qwdxx6" id="_r_b_" type="password" value=""/><div class="MuiInputAdornment-root MuiInputAdornment-positionEnd MuiInputAdornment-outlined MuiInputAdornment-sizeMedium css-yxqbup"><button class="MuiButtonBase-root MuiIconButton-root MuiIconButton-sizeMedium css-mfslm7" type="button"></button></div><fieldset class="MuiOutlinedInput-notchedOutline css-5v2ak0"><legend class="css-w4cd9x"><span class="notranslate">\u200b</span></legend></fieldset></div></div><label class="MuiFormControlLabel-root MuiFormControlLabel-labelPlacementEnd css-obg4lq"><span class="MuiButtonBase-root MuiCheckbox-root MuiCheckbox-colorPrimary MuiCheckbox-sizeMedium PrivateSwitchBase-root MuiCheckbox-root MuiCheckbox-colorPrimary MuiCheckbox-sizeMedium MuiCheckbox-root MuiCheckbox-colorPrimary MuiCheckbox-sizeMedium css-btgiec"><input class="PrivateSwitchBase-input css-j8yymo" type="checkbox"/></span><span class="MuiTypography-root MuiTypography-body1 MuiFormControlLabel-label css-fyswvn">Remember me</span></label><button class="MuiButtonBase-root MuiButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeMedium MuiButton-containedSizeMedium MuiButton-colorPrimary MuiButton-fullWidth MuiButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeMedium MuiButton-containedSizeMedium MuiButton-colorPrimary MuiButton-fullWidth css-1jo074v" type="button">LOGIN</button><div class="MuiBox-root css-xi606m"><a>Forgot Password?</a></div></div></div></div></div>\n</body>', keyword_name='Select From List By Value', keyword_args=('id:_r_b_', 'Self'), failed_locator='id:_r_b_', tried_locator_memory=[], locator_type='css', file_usage_ctx='*** Settings ***\nLibrary    SeleniumLibrary\nLibrary    SelfhealingAgents\nLibrary    ./fix_loop.py\n\nTest Setup       OpenTheBrowser\nTest Teardown        Close Browser\n\nResource        resource.robot\n\n*** Variables ***\n\n${time}    5 seconds\n${username}    claimantqa@gmail.com\n${password}    Camunda@123\n\n*** Test Cases ***\nAaseyaClaims\n    AISHealtCareLoginPage        ${username}        ${password} \n    RegisterPre-ClaimApproval\n    \n\n\n*** Keywords ***\n\nAISHealtCareLoginPage\n    [arguments]        ${username}        ${password} \n    Maximize browser Window\n    Set selenium implicit wait    ${time}\n    Click Button    Pre-Claim Authorization\n    Input Text    id:_r_6_    ${username}\n    Input Text    id:_r_7_    ${password}\n    Sleep    5 Seconds\n    Click Button    LOGIN\n    \n    \nRegisterPre-ClaimApproval\n    Set selenium implicit wait    ${time}\n    Input Text    id:_r_a_    John Doe\n    Select From List By Value    id:_r_b_    Self\n    Input Text    id:_r_c_    1321323')), kwargs: {}
+2026-02-12 11:50:39,925 - SelfhealingReports - ERROR - Function run_async raised an exception:
+Traceback (most recent call last):
+  File "D:\EuroControl\.venv\Lib\site-packages\SeleniumLibrary\__init__.py", line 676, in run_keyword
+    return DynamicCore.run_keyword(self, name, args, kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\EuroControl\.venv\Lib\site-packages\robotlibcore\core\dynamic.py", line 25, in run_keyword
+    return self.keywords[name](*args, **(kwargs or {}))
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\EuroControl\.venv\Lib\site-packages\SeleniumLibrary\keywords\selectelement.py", line 251, in select_from_list_by_value
+    select = self._get_select_list(locator)
+  File "D:\EuroControl\.venv\Lib\site-packages\SeleniumLibrary\keywords\selectelement.py", line 372, in _get_select_list
+    el = self.find_element(locator, tag="list")
+  File "D:\EuroControl\.venv\Lib\site-packages\SeleniumLibrary\base\context.py", line 82, in find_element
+    return self.element_finder.find(locator, tag, True, required, parent)
+           ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\EuroControl\.venv\Lib\site-packages\SeleniumLibrary\locators\elementfinder.py", line 93, in find
+    return self._find(locators[-1], tag, first_only, required, element)
+           ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\EuroControl\.venv\Lib\site-packages\SeleniumLibrary\locators\elementfinder.py", line 125, in _find
+    raise ElementNotFound(f"{element_type} with locator '{locator}' not found.")
+SeleniumLibrary.errors.ElementNotFound: List with locator 'id:_r_b_' not found.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\EuroControl\.venv\Lib\site-packages\SelfhealingAgents\utils\logging.py", line 81, in async_wrapper
+    result: Any = await func(*args, **kwargs)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\EuroControl\.venv\Lib\site-packages\SelfhealingAgents\self_healing_system\agents\orchestrator_agent\orchestrator_agent.py", line 77, in run_async
+    response: AgentRunResult = await self._agent.run(
+                               ^^^^^^^^^^^^^^^^^^^^^^
+    ...<4 lines>...
+    )
+    ^
+  File "D:\EuroControl\.venv\Lib\site-packages\pydantic_ai\agent\abstract.py", line 259, in run
+    async with self.iter(
+               ~~~~~~~~~^
+        user_prompt=user_prompt,
+        ^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<11 lines>...
+        builtin_tools=builtin_tools,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ) as agent_run:
+    ^
+  File "C:\Users\kavita.chonkar\AppData\Local\Python\pythoncore-3.14-64\Lib\contextlib.py", line 214, in __aenter__
+    return await anext(self.gen)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\EuroControl\.venv\Lib\site-packages\pydantic_ai\agent\__init__.py", line 722, in iter
+    graph.iter(
+    ~~~~~~~~~~^
+        inputs=user_prompt_node,
+        ^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<3 lines>...
+        infer_name=False,
+        ^^^^^^^^^^^^^^^^^
+    ) as graph_run,
+    ^
+  File "C:\Users\kavita.chonkar\AppData\Local\Python\pythoncore-3.14-64\Lib\contextlib.py", line 214, in __aenter__
+    return await anext(self.gen)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\EuroControl\.venv\Lib\site-packages\pydantic_graph\beta\graph.py", line 270, in iter
+    async with GraphRun[StateT, DepsT, OutputT](
+               ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        graph=self,
+        ^^^^^^^^^^^
+    ...<3 lines>...
+        traceparent=traceparent,
+        ^^^^^^^^^^^^^^^^^^^^^^^^
+    ) as graph_run:
+    ^
+  File "C:\Users\kavita.chonkar\AppData\Local\Python\pythoncore-3.14-64\Lib\typing.py", line 1221, in __call__
+    result = self.__origin__(*args, **kwargs)
+  File "D:\EuroControl\.venv\Lib\site-packages\pydantic_graph\beta\graph.py", line 402, in __init__
+    self._iterator_task_group = create_task_group()
+                                ~~~~~~~~~~~~~~~~~^^
+  File "D:\EuroControl\.venv\Lib\site-packages\anyio\_core\_tasks.py", line 173, in create_task_group
+    return get_async_backend().create_task_group()
+           ~~~~~~~~~~~~~~~~~^^
+  File "D:\EuroControl\.venv\Lib\site-packages\anyio\_core\_eventloop.py", line 189, in get_async_backend
+    raise NoEventLoopError(
+    ...<2 lines>...
+    )
+anyio.NoEventLoopError: Not currently running on any asynchronous event loop. Available async backends: asyncio, trio
+2026-02-12 11:50:39,952 - SelfhealingReports - ERROR - Function kickoff_healing raised an exception:
+Traceback (most recent call last):
+  File "D:\EuroControl\.venv\Lib\site-packages\SeleniumLibrary\__init__.py", line 676, in run_keyword
+    return DynamicCore.run_keyword(self, name, args, kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\EuroControl\.venv\Lib\site-packages\robotlibcore\core\dynamic.py", line 25, in run_keyword
+    return self.keywords[name](*args, **(kwargs or {}))
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\EuroControl\.venv\Lib\site-packages\SeleniumLibrary\keywords\selectelement.py", line 251, in select_from_list_by_value
+    select = self._get_select_list(locator)
+  File "D:\EuroControl\.venv\Lib\site-packages\SeleniumLibrary\keywords\selectelement.py", line 372, in _get_select_list
+    el = self.find_element(locator, tag="list")
+  File "D:\EuroControl\.venv\Lib\site-packages\SeleniumLibrary\base\context.py", line 82, in find_element
+    return self.element_finder.find(locator, tag, True, required, parent)
+           ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\EuroControl\.venv\Lib\site-packages\SeleniumLibrary\locators\elementfinder.py", line 93, in find
+    return self._find(locators[-1], tag, first_only, required, element)
+           ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\EuroControl\.venv\Lib\site-packages\SeleniumLibrary\locators\elementfinder.py", line 125, in _find
+    raise ElementNotFound(f"{element_type} with locator '{locator}' not found.")
+SeleniumLibrary.errors.ElementNotFound: List with locator 'id:_r_b_' not found.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\EuroControl\.venv\Lib\site-packages\SelfhealingAgents\utils\logging.py", line 96, in sync_wrapper
+    result: Any = func(*args, **kwargs)
+                  ~~~~^^^^^^^^^^^^^^^^^
+  File "D:\EuroControl\.venv\Lib\site-packages\SelfhealingAgents\self_healing_system\kickoff_multi_agent_system.py", line 70, in kickoff_healing
+    response = asyncio.get_event_loop().run_until_complete(
+        orchestrator_agent.run_async(robot_ctx_payload)
+    )
+  File "D:\EuroControl\.venv\Lib\site-packages\nest_asyncio.py", line 98, in run_until_complete
+    return f.result()
+           ~~~~~~~~^^
+  File "C:\Users\kavita.chonkar\AppData\Local\Python\pythoncore-3.14-64\Lib\asyncio\futures.py", line 208, in result
+    raise self._exception.with_traceback(self._exception_tb)
+  File "C:\Users\kavita.chonkar\AppData\Local\Python\pythoncore-3.14-64\Lib\asyncio\tasks.py", line 289, in __step_run_and_handle_result
+    result = coro.send(None)
+  File "D:\EuroControl\.venv\Lib\site-packages\SelfhealingAgents\utils\logging.py", line 81, in async_wrapper
+    result: Any = await func(*args, **kwargs)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\EuroControl\.venv\Lib\site-packages\SelfhealingAgents\self_healing_system\agents\orchestrator_agent\orchestrator_agent.py", line 77, in run_async
+    response: AgentRunResult = await self._agent.run(
+                               ^^^^^^^^^^^^^^^^^^^^^^
+    ...<4 lines>...
+    )
+    ^
+  File "D:\EuroControl\.venv\Lib\site-packages\pydantic_ai\agent\abstract.py", line 259, in run
+    async with self.iter(
+               ~~~~~~~~~^
+        user_prompt=user_prompt,
+        ^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<11 lines>...
+        builtin_tools=builtin_tools,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ) as agent_run:
+    ^
+  File "C:\Users\kavita.chonkar\AppData\Local\Python\pythoncore-3.14-64\Lib\contextlib.py", line 214, in __aenter__
+    return await anext(self.gen)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\EuroControl\.venv\Lib\site-packages\pydantic_ai\agent\__init__.py", line 722, in iter
+    graph.iter(
+    ~~~~~~~~~~^
+        inputs=user_prompt_node,
+        ^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<3 lines>...
+        infer_name=False,
+        ^^^^^^^^^^^^^^^^^
+    ) as graph_run,
+    ^
+  File "C:\Users\kavita.chonkar\AppData\Local\Python\pythoncore-3.14-64\Lib\contextlib.py", line 214, in __aenter__
+    return await anext(self.gen)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\EuroControl\.venv\Lib\site-packages\pydantic_graph\beta\graph.py", line 270, in iter
+    async with GraphRun[StateT, DepsT, OutputT](
+               ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        graph=self,
+        ^^^^^^^^^^^
+    ...<3 lines>...
+        traceparent=traceparent,
+        ^^^^^^^^^^^^^^^^^^^^^^^^
+    ) as graph_run:
+    ^
+  File "C:\Users\kavita.chonkar\AppData\Local\Python\pythoncore-3.14-64\Lib\typing.py", line 1221, in __call__
+    result = self.__origin__(*args, **kwargs)
+  File "D:\EuroControl\.venv\Lib\site-packages\pydantic_graph\beta\graph.py", line 402, in __init__
+    self._iterator_task_group = create_task_group()
+                                ~~~~~~~~~~~~~~~~~^^
+  File "D:\EuroControl\.venv\Lib\site-packages\anyio\_core\_tasks.py", line 173, in create_task_group
+    return get_async_backend().create_task_group()
+           ~~~~~~~~~~~~~~~~~^^
+  File "D:\EuroControl\.venv\Lib\site-packages\anyio\_core\_eventloop.py", line 189, in get_async_backend
+    raise NoEventLoopError(
+    ...<2 lines>...
+    )
+anyio.NoEventLoopError: Not currently running on any asynchronous event loop. Available async backends: asyncio, trio
+2026-02-12 11:52:58,979 - SelfhealingReports - INFO - Calling function: kickoff_healing with args: (robot.running.Keyword(name='Select From List By Value', args=('id:_r_b_', 'Self'), assign=()), robot.result.Keyword(name='Select From List By Value', args=('id:_r_b_', 'Self'), assign=())), kwargs: {'cfg': Cfg(enable_self_healing=True, use_llm_for_locator_generation=True, max_retries=3, orchestrator_agent_provider='openai', orchestrator_agent_model='gpt-4o-mini', orchestrator_agent_temperature=0.1, locator_agent_provider='openai', locator_agent_model='gpt-4o-mini', locator_agent_temperature=0.1, request_limit=5, total_tokens_limit=6000, locator_type='css', report_directory=None, is_rerun_activated=False, azure_api_key='<REDACTED API Key>', azure_api_version=None, azure_endpoint='<REDACTED API Endpoint>', openai_api_key='<REDACTED API Key>', base_url='<REDACTED BASE URL>', litellm_api_key='<REDACTED API Key>'), 'tried_locator_memory': []}
+2026-02-12 11:52:58,979 - SelfhealingReports - INFO - Calling function: get_context_payload with args: (robot.running.Keyword(name='Select From List By Value', args=('id:_r_b_', 'Self'), assign=()), robot.result.Keyword(name='Select From List By Value', args=('id:_r_b_', 'Self'), assign=()), <SelfhealingAgents.self_healing_system.context_retrieving.library_dom_utils.selenium_dom_utils.SeleniumDomUtils object at 0x000001E4C67CCC20>), kwargs: {}
+2026-02-12 11:52:59,005 - SelfhealingReports - INFO - Function get_context_payload returned: robot_code_line='Select From List By Value id:_r_b_ Self' error_msg="List with locator 'id:_r_b_' not found." dom_tree='<body>\n<div id="root"><div class="MuiBox-root css-1kdgnzq"><div class="MuiBox-root css-1pd736a"><img/><div class="MuiBox-root css-1u5ih8"><p class="MuiTypography-root MuiTypography-body1 css-1tkzlsh">Reliable health coverage for you and your family</p><p class="MuiTypography-root MuiTypography-body1 css-de2l7a">Our digital-first approach ensures that your health and claims are prioritized with professional care and minimal friction</p></div></div><div class="MuiBox-root css-qezfun"><div class="MuiBox-root css-58kkol"><div class="MuiBox-root css-3b2wtl"><img/></div><p class="MuiTypography-root MuiTypography-body1 css-a52qvt">Welcome Back</p><p class="MuiTypography-root MuiTypography-body1 css-97uudg">Please enter your credentials to access your secure portal</p><p class="MuiTypography-root MuiTypography-body1 css-1qwd97s">Username</p><div class="MuiFormControl-root MuiFormControl-fullWidth MuiTextField-root css-1rk0quz"><div class="MuiInputBase-root MuiOutlinedInput-root MuiInputBase-colorPrimary MuiInputBase-fullWidth Mui-focused MuiInputBase-formControl css-10uzne6"><input class="MuiInputBase-input MuiOutlinedInput-input css-1pk1fka" id="_r_a_" type="text" value="John Doe"/><fieldset class="MuiOutlinedInput-notchedOutline css-5v2ak0"><legend class="css-w4cd9x"><span class="notranslate">\u200b</span></legend></fieldset></div></div><p class="MuiTypography-root MuiTypography-body1 css-1qwd97s">Password</p><div class="MuiFormControl-root MuiFormControl-fullWidth MuiTextField-root css-18lile"><div class="MuiInputBase-root MuiOutlinedInput-root MuiInputBase-colorPrimary MuiInputBase-fullWidth MuiInputBase-formControl MuiInputBase-adornedEnd css-9t62qu"><input class="MuiInputBase-input MuiOutlinedInput-input MuiInputBase-inputAdornedEnd css-qwdxx6" id="_r_b_" type="password" value=""/><div class="MuiInputAdornment-root MuiInputAdornment-positionEnd MuiInputAdornment-outlined MuiInputAdornment-sizeMedium css-yxqbup"><button class="MuiButtonBase-root MuiIconButton-root MuiIconButton-sizeMedium css-mfslm7" type="button"></button></div><fieldset class="MuiOutlinedInput-notchedOutline css-5v2ak0"><legend class="css-w4cd9x"><span class="notranslate">\u200b</span></legend></fieldset></div></div><label class="MuiFormControlLabel-root MuiFormControlLabel-labelPlacementEnd css-obg4lq"><span class="MuiButtonBase-root MuiCheckbox-root MuiCheckbox-colorPrimary MuiCheckbox-sizeMedium PrivateSwitchBase-root MuiCheckbox-root MuiCheckbox-colorPrimary MuiCheckbox-sizeMedium MuiCheckbox-root MuiCheckbox-colorPrimary MuiCheckbox-sizeMedium css-btgiec"><input class="PrivateSwitchBase-input css-j8yymo" type="checkbox"/></span><span class="MuiTypography-root MuiTypography-body1 MuiFormControlLabel-label css-fyswvn">Remember me</span></label><button class="MuiButtonBase-root MuiButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeMedium MuiButton-containedSizeMedium MuiButton-colorPrimary MuiButton-fullWidth MuiButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeMedium MuiButton-containedSizeMedium MuiButton-colorPrimary MuiButton-fullWidth css-1jo074v" type="button">LOGIN</button><div class="MuiBox-root css-xi606m"><a>Forgot Password?</a></div></div></div></div></div>\n</body>' keyword_name='Select From List By Value' keyword_args=('id:_r_b_', 'Self') failed_locator='id:_r_b_' tried_locator_memory=[] locator_type='tbd' file_usage_ctx='*** Settings ***\nLibrary    SeleniumLibrary\nLibrary    SelfhealingAgents\nLibrary    ./fix_loop.py\n\nTest Setup       OpenTheBrowser\nTest Teardown        Close Browser\n\nResource        resource.robot\n\n*** Variables ***\n\n${time}    5 seconds\n${username}    claimantqa@gmail.com\n${password}    Camunda@123\n\n*** Test Cases ***\nAaseyaClaims\n    AISHealtCareLoginPage        ${username}        ${password} \n    RegisterPre-ClaimApproval\n    \n\n\n*** Keywords ***\n\nAISHealtCareLoginPage\n    [arguments]        ${username}        ${password} \n    Maximize browser Window\n    Set selenium implicit wait    ${time}\n    Click Button    Pre-Claim Authorization\n    Input Text    id:_r_6_    ${username}\n    Input Text    id:_r_7_    ${password}\n    Sleep    ${time}\n    Click Button    LOGIN\n    \n    \nRegisterPre-ClaimApproval\n    Sleep    ${time}\n    Input Text    id:_r_a_    John Doe\n    Select From List By Value    id:_r_b_    Self\n    Input Text    id:_r_c_    1321323'
+2026-02-12 11:52:59,006 - SelfhealingReports - INFO - Calling function: get_client_model with args: (), kwargs: {'provider': 'openai', 'model': 'gpt-4o-mini', 'cfg': Cfg(enable_self_healing=True, use_llm_for_locator_generation=True, max_retries=3, orchestrator_agent_provider='openai', orchestrator_agent_model='gpt-4o-mini', orchestrator_agent_temperature=0.1, locator_agent_provider='openai', locator_agent_model='gpt-4o-mini', locator_agent_temperature=0.1, request_limit=5, total_tokens_limit=6000, locator_type='css', report_directory=None, is_rerun_activated=False, azure_api_key='<REDACTED API Key>', azure_api_version=None, azure_endpoint='<REDACTED API Endpoint>', openai_api_key='<REDACTED API Key>', base_url='<REDACTED BASE URL>', litellm_api_key='<REDACTED API Key>')}
+2026-02-12 11:53:00,041 - SelfhealingReports - INFO - Function get_client_model returned: OpenAIModel()
+2026-02-12 11:53:00,046 - SelfhealingReports - INFO - Calling function: get_client_model with args: (), kwargs: {'provider': 'openai', 'model': 'gpt-4o-mini', 'cfg': Cfg(enable_self_healing=True, use_llm_for_locator_generation=True, max_retries=3, orchestrator_agent_provider='openai', orchestrator_agent_model='gpt-4o-mini', orchestrator_agent_temperature=0.1, locator_agent_provider='openai', locator_agent_model='gpt-4o-mini', locator_agent_temperature=0.1, request_limit=5, total_tokens_limit=6000, locator_type='css', report_directory=None, is_rerun_activated=False, azure_api_key='<REDACTED API Key>', azure_api_version=None, azure_endpoint='<REDACTED API Endpoint>', openai_api_key='<REDACTED API Key>', base_url='<REDACTED BASE URL>', litellm_api_key='<REDACTED API Key>')}
+2026-02-12 11:53:00,087 - SelfhealingReports - INFO - Function get_client_model returned: OpenAIModel()
+2026-02-12 11:53:00,101 - SelfhealingReports - INFO - Calling async function: run_async with args: (<SelfhealingAgents.self_healing_system.agents.orchestrator_agent.orchestrator_agent.OrchestratorAgent object at 0x000001E4C6FB02F0>, PromptPayload(robot_code_line='Select From List By Value id:_r_b_ Self', error_msg="List with locator 'id:_r_b_' not found.", dom_tree='<body>\n<div id="root"><div class="MuiBox-root css-1kdgnzq"><div class="MuiBox-root css-1pd736a"><img/><div class="MuiBox-root css-1u5ih8"><p class="MuiTypography-root MuiTypography-body1 css-1tkzlsh">Reliable health coverage for you and your family</p><p class="MuiTypography-root MuiTypography-body1 css-de2l7a">Our digital-first approach ensures that your health and claims are prioritized with professional care and minimal friction</p></div></div><div class="MuiBox-root css-qezfun"><div class="MuiBox-root css-58kkol"><div class="MuiBox-root css-3b2wtl"><img/></div><p class="MuiTypography-root MuiTypography-body1 css-a52qvt">Welcome Back</p><p class="MuiTypography-root MuiTypography-body1 css-97uudg">Please enter your credentials to access your secure portal</p><p class="MuiTypography-root MuiTypography-body1 css-1qwd97s">Username</p><div class="MuiFormControl-root MuiFormControl-fullWidth MuiTextField-root css-1rk0quz"><div class="MuiInputBase-root MuiOutlinedInput-root MuiInputBase-colorPrimary MuiInputBase-fullWidth Mui-focused MuiInputBase-formControl css-10uzne6"><input class="MuiInputBase-input MuiOutlinedInput-input css-1pk1fka" id="_r_a_" type="text" value="John Doe"/><fieldset class="MuiOutlinedInput-notchedOutline css-5v2ak0"><legend class="css-w4cd9x"><span class="notranslate">\u200b</span></legend></fieldset></div></div><p class="MuiTypography-root MuiTypography-body1 css-1qwd97s">Password</p><div class="MuiFormControl-root MuiFormControl-fullWidth MuiTextField-root css-18lile"><div class="MuiInputBase-root MuiOutlinedInput-root MuiInputBase-colorPrimary MuiInputBase-fullWidth MuiInputBase-formControl MuiInputBase-adornedEnd css-9t62qu"><input class="MuiInputBase-input MuiOutlinedInput-input MuiInputBase-inputAdornedEnd css-qwdxx6" id="_r_b_" type="password" value=""/><div class="MuiInputAdornment-root MuiInputAdornment-positionEnd MuiInputAdornment-outlined MuiInputAdornment-sizeMedium css-yxqbup"><button class="MuiButtonBase-root MuiIconButton-root MuiIconButton-sizeMedium css-mfslm7" type="button"></button></div><fieldset class="MuiOutlinedInput-notchedOutline css-5v2ak0"><legend class="css-w4cd9x"><span class="notranslate">\u200b</span></legend></fieldset></div></div><label class="MuiFormControlLabel-root MuiFormControlLabel-labelPlacementEnd css-obg4lq"><span class="MuiButtonBase-root MuiCheckbox-root MuiCheckbox-colorPrimary MuiCheckbox-sizeMedium PrivateSwitchBase-root MuiCheckbox-root MuiCheckbox-colorPrimary MuiCheckbox-sizeMedium MuiCheckbox-root MuiCheckbox-colorPrimary MuiCheckbox-sizeMedium css-btgiec"><input class="PrivateSwitchBase-input css-j8yymo" type="checkbox"/></span><span class="MuiTypography-root MuiTypography-body1 MuiFormControlLabel-label css-fyswvn">Remember me</span></label><button class="MuiButtonBase-root MuiButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeMedium MuiButton-containedSizeMedium MuiButton-colorPrimary MuiButton-fullWidth MuiButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeMedium MuiButton-containedSizeMedium MuiButton-colorPrimary MuiButton-fullWidth css-1jo074v" type="button">LOGIN</button><div class="MuiBox-root css-xi606m"><a>Forgot Password?</a></div></div></div></div></div>\n</body>', keyword_name='Select From List By Value', keyword_args=('id:_r_b_', 'Self'), failed_locator='id:_r_b_', tried_locator_memory=[], locator_type='css', file_usage_ctx='*** Settings ***\nLibrary    SeleniumLibrary\nLibrary    SelfhealingAgents\nLibrary    ./fix_loop.py\n\nTest Setup       OpenTheBrowser\nTest Teardown        Close Browser\n\nResource        resource.robot\n\n*** Variables ***\n\n${time}    5 seconds\n${username}    claimantqa@gmail.com\n${password}    Camunda@123\n\n*** Test Cases ***\nAaseyaClaims\n    AISHealtCareLoginPage        ${username}        ${password} \n    RegisterPre-ClaimApproval\n    \n\n\n*** Keywords ***\n\nAISHealtCareLoginPage\n    [arguments]        ${username}        ${password} \n    Maximize browser Window\n    Set selenium implicit wait    ${time}\n    Click Button    Pre-Claim Authorization\n    Input Text    id:_r_6_    ${username}\n    Input Text    id:_r_7_    ${password}\n    Sleep    ${time}\n    Click Button    LOGIN\n    \n    \nRegisterPre-ClaimApproval\n    Sleep    ${time}\n    Input Text    id:_r_a_    John Doe\n    Select From List By Value    id:_r_b_    Self\n    Input Text    id:_r_c_    1321323')), kwargs: {}
+2026-02-12 11:53:00,106 - SelfhealingReports - ERROR - Function run_async raised an exception:
+Traceback (most recent call last):
+  File "D:\EuroControl\.venv\Lib\site-packages\SeleniumLibrary\__init__.py", line 676, in run_keyword
+    return DynamicCore.run_keyword(self, name, args, kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\EuroControl\.venv\Lib\site-packages\robotlibcore\core\dynamic.py", line 25, in run_keyword
+    return self.keywords[name](*args, **(kwargs or {}))
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\EuroControl\.venv\Lib\site-packages\SeleniumLibrary\keywords\selectelement.py", line 251, in select_from_list_by_value
+    select = self._get_select_list(locator)
+  File "D:\EuroControl\.venv\Lib\site-packages\SeleniumLibrary\keywords\selectelement.py", line 372, in _get_select_list
+    el = self.find_element(locator, tag="list")
+  File "D:\EuroControl\.venv\Lib\site-packages\SeleniumLibrary\base\context.py", line 82, in find_element
+    return self.element_finder.find(locator, tag, True, required, parent)
+           ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\EuroControl\.venv\Lib\site-packages\SeleniumLibrary\locators\elementfinder.py", line 93, in find
+    return self._find(locators[-1], tag, first_only, required, element)
+           ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\EuroControl\.venv\Lib\site-packages\SeleniumLibrary\locators\elementfinder.py", line 125, in _find
+    raise ElementNotFound(f"{element_type} with locator '{locator}' not found.")
+SeleniumLibrary.errors.ElementNotFound: List with locator 'id:_r_b_' not found.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\EuroControl\.venv\Lib\site-packages\SelfhealingAgents\utils\logging.py", line 81, in async_wrapper
+    result: Any = await func(*args, **kwargs)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\EuroControl\.venv\Lib\site-packages\SelfhealingAgents\self_healing_system\agents\orchestrator_agent\orchestrator_agent.py", line 77, in run_async
+    response: AgentRunResult = await self._agent.run(
+                               ^^^^^^^^^^^^^^^^^^^^^^
+    ...<4 lines>...
+    )
+    ^
+  File "D:\EuroControl\.venv\Lib\site-packages\pydantic_ai\agent\abstract.py", line 259, in run
+    async with self.iter(
+               ~~~~~~~~~^
+        user_prompt=user_prompt,
+        ^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<11 lines>...
+        builtin_tools=builtin_tools,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ) as agent_run:
+    ^
+  File "C:\Users\kavita.chonkar\AppData\Local\Python\pythoncore-3.14-64\Lib\contextlib.py", line 214, in __aenter__
+    return await anext(self.gen)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\EuroControl\.venv\Lib\site-packages\pydantic_ai\agent\__init__.py", line 722, in iter
+    graph.iter(
+    ~~~~~~~~~~^
+        inputs=user_prompt_node,
+        ^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<3 lines>...
+        infer_name=False,
+        ^^^^^^^^^^^^^^^^^
+    ) as graph_run,
+    ^
+  File "C:\Users\kavita.chonkar\AppData\Local\Python\pythoncore-3.14-64\Lib\contextlib.py", line 214, in __aenter__
+    return await anext(self.gen)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\EuroControl\.venv\Lib\site-packages\pydantic_graph\beta\graph.py", line 270, in iter
+    async with GraphRun[StateT, DepsT, OutputT](
+               ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        graph=self,
+        ^^^^^^^^^^^
+    ...<3 lines>...
+        traceparent=traceparent,
+        ^^^^^^^^^^^^^^^^^^^^^^^^
+    ) as graph_run:
+    ^
+  File "C:\Users\kavita.chonkar\AppData\Local\Python\pythoncore-3.14-64\Lib\typing.py", line 1221, in __call__
+    result = self.__origin__(*args, **kwargs)
+  File "D:\EuroControl\.venv\Lib\site-packages\pydantic_graph\beta\graph.py", line 402, in __init__
+    self._iterator_task_group = create_task_group()
+                                ~~~~~~~~~~~~~~~~~^^
+  File "D:\EuroControl\.venv\Lib\site-packages\anyio\_core\_tasks.py", line 173, in create_task_group
+    return get_async_backend().create_task_group()
+           ~~~~~~~~~~~~~~~~~^^
+  File "D:\EuroControl\.venv\Lib\site-packages\anyio\_core\_eventloop.py", line 189, in get_async_backend
+    raise NoEventLoopError(
+    ...<2 lines>...
+    )
+anyio.NoEventLoopError: Not currently running on any asynchronous event loop. Available async backends: asyncio, trio
+2026-02-12 11:53:00,137 - SelfhealingReports - ERROR - Function kickoff_healing raised an exception:
+Traceback (most recent call last):
+  File "D:\EuroControl\.venv\Lib\site-packages\SeleniumLibrary\__init__.py", line 676, in run_keyword
+    return DynamicCore.run_keyword(self, name, args, kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\EuroControl\.venv\Lib\site-packages\robotlibcore\core\dynamic.py", line 25, in run_keyword
+    return self.keywords[name](*args, **(kwargs or {}))
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\EuroControl\.venv\Lib\site-packages\SeleniumLibrary\keywords\selectelement.py", line 251, in select_from_list_by_value
+    select = self._get_select_list(locator)
+  File "D:\EuroControl\.venv\Lib\site-packages\SeleniumLibrary\keywords\selectelement.py", line 372, in _get_select_list
+    el = self.find_element(locator, tag="list")
+  File "D:\EuroControl\.venv\Lib\site-packages\SeleniumLibrary\base\context.py", line 82, in find_element
+    return self.element_finder.find(locator, tag, True, required, parent)
+           ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\EuroControl\.venv\Lib\site-packages\SeleniumLibrary\locators\elementfinder.py", line 93, in find
+    return self._find(locators[-1], tag, first_only, required, element)
+           ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\EuroControl\.venv\Lib\site-packages\SeleniumLibrary\locators\elementfinder.py", line 125, in _find
+    raise ElementNotFound(f"{element_type} with locator '{locator}' not found.")
+SeleniumLibrary.errors.ElementNotFound: List with locator 'id:_r_b_' not found.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\EuroControl\.venv\Lib\site-packages\SelfhealingAgents\utils\logging.py", line 96, in sync_wrapper
+    result: Any = func(*args, **kwargs)
+                  ~~~~^^^^^^^^^^^^^^^^^
+  File "D:\EuroControl\.venv\Lib\site-packages\SelfhealingAgents\self_healing_system\kickoff_multi_agent_system.py", line 70, in kickoff_healing
+    response = asyncio.get_event_loop().run_until_complete(
+        orchestrator_agent.run_async(robot_ctx_payload)
+    )
+  File "D:\EuroControl\.venv\Lib\site-packages\nest_asyncio.py", line 98, in run_until_complete
+    return f.result()
+           ~~~~~~~~^^
+  File "C:\Users\kavita.chonkar\AppData\Local\Python\pythoncore-3.14-64\Lib\asyncio\futures.py", line 208, in result
+    raise self._exception.with_traceback(self._exception_tb)
+  File "C:\Users\kavita.chonkar\AppData\Local\Python\pythoncore-3.14-64\Lib\asyncio\tasks.py", line 289, in __step_run_and_handle_result
+    result = coro.send(None)
+  File "D:\EuroControl\.venv\Lib\site-packages\SelfhealingAgents\utils\logging.py", line 81, in async_wrapper
+    result: Any = await func(*args, **kwargs)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\EuroControl\.venv\Lib\site-packages\SelfhealingAgents\self_healing_system\agents\orchestrator_agent\orchestrator_agent.py", line 77, in run_async
+    response: AgentRunResult = await self._agent.run(
+                               ^^^^^^^^^^^^^^^^^^^^^^
+    ...<4 lines>...
+    )
+    ^
+  File "D:\EuroControl\.venv\Lib\site-packages\pydantic_ai\agent\abstract.py", line 259, in run
+    async with self.iter(
+               ~~~~~~~~~^
+        user_prompt=user_prompt,
+        ^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<11 lines>...
+        builtin_tools=builtin_tools,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ) as agent_run:
+    ^
+  File "C:\Users\kavita.chonkar\AppData\Local\Python\pythoncore-3.14-64\Lib\contextlib.py", line 214, in __aenter__
+    return await anext(self.gen)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\EuroControl\.venv\Lib\site-packages\pydantic_ai\agent\__init__.py", line 722, in iter
+    graph.iter(
+    ~~~~~~~~~~^
+        inputs=user_prompt_node,
+        ^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<3 lines>...
+        infer_name=False,
+        ^^^^^^^^^^^^^^^^^
+    ) as graph_run,
+    ^
+  File "C:\Users\kavita.chonkar\AppData\Local\Python\pythoncore-3.14-64\Lib\contextlib.py", line 214, in __aenter__
+    return await anext(self.gen)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\EuroControl\.venv\Lib\site-packages\pydantic_graph\beta\graph.py", line 270, in iter
+    async with GraphRun[StateT, DepsT, OutputT](
+               ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        graph=self,
+        ^^^^^^^^^^^
+    ...<3 lines>...
+        traceparent=traceparent,
+        ^^^^^^^^^^^^^^^^^^^^^^^^
+    ) as graph_run:
+    ^
+  File "C:\Users\kavita.chonkar\AppData\Local\Python\pythoncore-3.14-64\Lib\typing.py", line 1221, in __call__
+    result = self.__origin__(*args, **kwargs)
+  File "D:\EuroControl\.venv\Lib\site-packages\pydantic_graph\beta\graph.py", line 402, in __init__
+    self._iterator_task_group = create_task_group()
+                                ~~~~~~~~~~~~~~~~~^^
+  File "D:\EuroControl\.venv\Lib\site-packages\anyio\_core\_tasks.py", line 173, in create_task_group
+    return get_async_backend().create_task_group()
+           ~~~~~~~~~~~~~~~~~^^
+  File "D:\EuroControl\.venv\Lib\site-packages\anyio\_core\_eventloop.py", line 189, in get_async_backend
+    raise NoEventLoopError(
+    ...<2 lines>...
+    )
+anyio.NoEventLoopError: Not currently running on any asynchronous event loop. Available async backends: asyncio, trio
+2026-02-12 12:21:14,487 - SelfhealingReports - INFO - Calling function: kickoff_healing with args: (robot.running.Keyword(name='Select From List By Value', args=('id:_r_b_', 'Self'), assign=()), robot.result.Keyword(name='Select From List By Value', args=('id:_r_b_', 'Self'), assign=())), kwargs: {'cfg': Cfg(enable_self_healing=True, use_llm_for_locator_generation=True, max_retries=3, orchestrator_agent_provider='openai', orchestrator_agent_model='gpt-4o-mini', orchestrator_agent_temperature=0.1, locator_agent_provider='openai', locator_agent_model='gpt-4o-mini', locator_agent_temperature=0.1, request_limit=5, total_tokens_limit=6000, locator_type='css', report_directory=None, is_rerun_activated=False, azure_api_key='<REDACTED API Key>', azure_api_version=None, azure_endpoint='<REDACTED API Endpoint>', openai_api_key='<REDACTED API Key>', base_url='<REDACTED BASE URL>', litellm_api_key='<REDACTED API Key>'), 'tried_locator_memory': []}
+2026-02-12 12:21:14,489 - SelfhealingReports - INFO - Calling function: get_context_payload with args: (robot.running.Keyword(name='Select From List By Value', args=('id:_r_b_', 'Self'), assign=()), robot.result.Keyword(name='Select From List By Value', args=('id:_r_b_', 'Self'), assign=()), <SelfhealingAgents.self_healing_system.context_retrieving.library_dom_utils.selenium_dom_utils.SeleniumDomUtils object at 0x0000025BABB5CC20>), kwargs: {}
+2026-02-12 12:21:14,521 - SelfhealingReports - INFO - Function get_context_payload returned: robot_code_line='Select From List By Value id:_r_b_ Self' error_msg="List with locator 'id:_r_b_' not found." dom_tree='<body>\n<div id="root"><div class="MuiBox-root css-1kdgnzq"><div class="MuiBox-root css-1pd736a"><img/><div class="MuiBox-root css-1u5ih8"><p class="MuiTypography-root MuiTypography-body1 css-1tkzlsh">Reliable health coverage for you and your family</p><p class="MuiTypography-root MuiTypography-body1 css-de2l7a">Our digital-first approach ensures that your health and claims are prioritized with professional care and minimal friction</p></div></div><div class="MuiBox-root css-qezfun"><div class="MuiBox-root css-58kkol"><div class="MuiBox-root css-3b2wtl"><img/></div><p class="MuiTypography-root MuiTypography-body1 css-a52qvt">Welcome Back</p><p class="MuiTypography-root MuiTypography-body1 css-97uudg">Please enter your credentials to access your secure portal</p><p class="MuiTypography-root MuiTypography-body1 css-1qwd97s">Username</p><div class="MuiFormControl-root MuiFormControl-fullWidth MuiTextField-root css-1rk0quz"><div class="MuiInputBase-root MuiOutlinedInput-root MuiInputBase-colorPrimary MuiInputBase-fullWidth Mui-focused MuiInputBase-formControl css-10uzne6"><input class="MuiInputBase-input MuiOutlinedInput-input css-1pk1fka" id="_r_a_" type="text" value="John Doe"/><fieldset class="MuiOutlinedInput-notchedOutline css-5v2ak0"><legend class="css-w4cd9x"><span class="notranslate">\u200b</span></legend></fieldset></div></div><p class="MuiTypography-root MuiTypography-body1 css-1qwd97s">Password</p><div class="MuiFormControl-root MuiFormControl-fullWidth MuiTextField-root css-18lile"><div class="MuiInputBase-root MuiOutlinedInput-root MuiInputBase-colorPrimary MuiInputBase-fullWidth MuiInputBase-formControl MuiInputBase-adornedEnd css-9t62qu"><input class="MuiInputBase-input MuiOutlinedInput-input MuiInputBase-inputAdornedEnd css-qwdxx6" id="_r_b_" type="password" value=""/><div class="MuiInputAdornment-root MuiInputAdornment-positionEnd MuiInputAdornment-outlined MuiInputAdornment-sizeMedium css-yxqbup"><button class="MuiButtonBase-root MuiIconButton-root MuiIconButton-sizeMedium css-mfslm7" type="button"></button></div><fieldset class="MuiOutlinedInput-notchedOutline css-5v2ak0"><legend class="css-w4cd9x"><span class="notranslate">\u200b</span></legend></fieldset></div></div><label class="MuiFormControlLabel-root MuiFormControlLabel-labelPlacementEnd css-obg4lq"><span class="MuiButtonBase-root MuiCheckbox-root MuiCheckbox-colorPrimary MuiCheckbox-sizeMedium PrivateSwitchBase-root MuiCheckbox-root MuiCheckbox-colorPrimary MuiCheckbox-sizeMedium MuiCheckbox-root MuiCheckbox-colorPrimary MuiCheckbox-sizeMedium css-btgiec"><input class="PrivateSwitchBase-input css-j8yymo" type="checkbox"/></span><span class="MuiTypography-root MuiTypography-body1 MuiFormControlLabel-label css-fyswvn">Remember me</span></label><button class="MuiButtonBase-root MuiButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeMedium MuiButton-containedSizeMedium MuiButton-colorPrimary MuiButton-fullWidth MuiButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeMedium MuiButton-containedSizeMedium MuiButton-colorPrimary MuiButton-fullWidth css-1jo074v" type="button">LOGIN</button><div class="MuiBox-root css-xi606m"><a>Forgot Password?</a></div></div></div></div></div>\n</body>' keyword_name='Select From List By Value' keyword_args=('id:_r_b_', 'Self') failed_locator='id:_r_b_' tried_locator_memory=[] locator_type='tbd' file_usage_ctx='*** Settings ***\nLibrary    SeleniumLibrary\nLibrary    SelfhealingAgents\nLibrary    ./fix_loop.py\n\nTest Setup       OpenTheBrowser\nTest Teardown        Close Browser\n\nResource        resource.robot\n\n*** Variables ***\n\n${time}    5 seconds\n${username}    claimantqa@gmail.com\n${password}    Camunda@123\n\n*** Test Cases ***\nAaseyaClaims\n    AISHealtCareLoginPage        ${username}        ${password} \n    RegisterPre-ClaimApproval\n    \n\n\n*** Keywords ***\n\nAISHealtCareLoginPage\n    [arguments]        ${username}        ${password} \n    Maximize browser Window\n    Set selenium implicit wait    ${time}\n    Click Button    Pre-Claim Authorization\n    Input Text    id:_r_6_    ${username}\n    Input Text    id:_r_7_    ${password}\n    Sleep    ${time}\n    Click Button    LOGIN\n    \n    \nRegisterPre-ClaimApproval\n    Sleep    ${time}\n    Input Text    id:_r_a_    John Doe\n    Select From List By Value    id:_r_b_    Self\n    Input Text    id:_r_c_    1321323'
+2026-02-12 12:21:14,522 - SelfhealingReports - INFO - Calling function: get_client_model with args: (), kwargs: {'provider': 'openai', 'model': 'gpt-4o-mini', 'cfg': Cfg(enable_self_healing=True, use_llm_for_locator_generation=True, max_retries=3, orchestrator_agent_provider='openai', orchestrator_agent_model='gpt-4o-mini', orchestrator_agent_temperature=0.1, locator_agent_provider='openai', locator_agent_model='gpt-4o-mini', locator_agent_temperature=0.1, request_limit=5, total_tokens_limit=6000, locator_type='css', report_directory=None, is_rerun_activated=False, azure_api_key='<REDACTED API Key>', azure_api_version=None, azure_endpoint='<REDACTED API Endpoint>', openai_api_key='<REDACTED API Key>', base_url='<REDACTED BASE URL>', litellm_api_key='<REDACTED API Key>')}
+2026-02-12 12:21:15,693 - SelfhealingReports - INFO - Function get_client_model returned: OpenAIModel()
+2026-02-12 12:21:15,698 - SelfhealingReports - INFO - Calling function: get_client_model with args: (), kwargs: {'provider': 'openai', 'model': 'gpt-4o-mini', 'cfg': Cfg(enable_self_healing=True, use_llm_for_locator_generation=True, max_retries=3, orchestrator_agent_provider='openai', orchestrator_agent_model='gpt-4o-mini', orchestrator_agent_temperature=0.1, locator_agent_provider='openai', locator_agent_model='gpt-4o-mini', locator_agent_temperature=0.1, request_limit=5, total_tokens_limit=6000, locator_type='css', report_directory=None, is_rerun_activated=False, azure_api_key='<REDACTED API Key>', azure_api_version=None, azure_endpoint='<REDACTED API Endpoint>', openai_api_key='<REDACTED API Key>', base_url='<REDACTED BASE URL>', litellm_api_key='<REDACTED API Key>')}
+2026-02-12 12:21:15,728 - SelfhealingReports - INFO - Function get_client_model returned: OpenAIModel()
+2026-02-12 12:21:15,736 - SelfhealingReports - INFO - Calling async function: run_async with args: (<SelfhealingAgents.self_healing_system.agents.orchestrator_agent.orchestrator_agent.OrchestratorAgent object at 0x0000025BAC3402F0>, PromptPayload(robot_code_line='Select From List By Value id:_r_b_ Self', error_msg="List with locator 'id:_r_b_' not found.", dom_tree='<body>\n<div id="root"><div class="MuiBox-root css-1kdgnzq"><div class="MuiBox-root css-1pd736a"><img/><div class="MuiBox-root css-1u5ih8"><p class="MuiTypography-root MuiTypography-body1 css-1tkzlsh">Reliable health coverage for you and your family</p><p class="MuiTypography-root MuiTypography-body1 css-de2l7a">Our digital-first approach ensures that your health and claims are prioritized with professional care and minimal friction</p></div></div><div class="MuiBox-root css-qezfun"><div class="MuiBox-root css-58kkol"><div class="MuiBox-root css-3b2wtl"><img/></div><p class="MuiTypography-root MuiTypography-body1 css-a52qvt">Welcome Back</p><p class="MuiTypography-root MuiTypography-body1 css-97uudg">Please enter your credentials to access your secure portal</p><p class="MuiTypography-root MuiTypography-body1 css-1qwd97s">Username</p><div class="MuiFormControl-root MuiFormControl-fullWidth MuiTextField-root css-1rk0quz"><div class="MuiInputBase-root MuiOutlinedInput-root MuiInputBase-colorPrimary MuiInputBase-fullWidth Mui-focused MuiInputBase-formControl css-10uzne6"><input class="MuiInputBase-input MuiOutlinedInput-input css-1pk1fka" id="_r_a_" type="text" value="John Doe"/><fieldset class="MuiOutlinedInput-notchedOutline css-5v2ak0"><legend class="css-w4cd9x"><span class="notranslate">\u200b</span></legend></fieldset></div></div><p class="MuiTypography-root MuiTypography-body1 css-1qwd97s">Password</p><div class="MuiFormControl-root MuiFormControl-fullWidth MuiTextField-root css-18lile"><div class="MuiInputBase-root MuiOutlinedInput-root MuiInputBase-colorPrimary MuiInputBase-fullWidth MuiInputBase-formControl MuiInputBase-adornedEnd css-9t62qu"><input class="MuiInputBase-input MuiOutlinedInput-input MuiInputBase-inputAdornedEnd css-qwdxx6" id="_r_b_" type="password" value=""/><div class="MuiInputAdornment-root MuiInputAdornment-positionEnd MuiInputAdornment-outlined MuiInputAdornment-sizeMedium css-yxqbup"><button class="MuiButtonBase-root MuiIconButton-root MuiIconButton-sizeMedium css-mfslm7" type="button"></button></div><fieldset class="MuiOutlinedInput-notchedOutline css-5v2ak0"><legend class="css-w4cd9x"><span class="notranslate">\u200b</span></legend></fieldset></div></div><label class="MuiFormControlLabel-root MuiFormControlLabel-labelPlacementEnd css-obg4lq"><span class="MuiButtonBase-root MuiCheckbox-root MuiCheckbox-colorPrimary MuiCheckbox-sizeMedium PrivateSwitchBase-root MuiCheckbox-root MuiCheckbox-colorPrimary MuiCheckbox-sizeMedium MuiCheckbox-root MuiCheckbox-colorPrimary MuiCheckbox-sizeMedium css-btgiec"><input class="PrivateSwitchBase-input css-j8yymo" type="checkbox"/></span><span class="MuiTypography-root MuiTypography-body1 MuiFormControlLabel-label css-fyswvn">Remember me</span></label><button class="MuiButtonBase-root MuiButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeMedium MuiButton-containedSizeMedium MuiButton-colorPrimary MuiButton-fullWidth MuiButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeMedium MuiButton-containedSizeMedium MuiButton-colorPrimary MuiButton-fullWidth css-1jo074v" type="button">LOGIN</button><div class="MuiBox-root css-xi606m"><a>Forgot Password?</a></div></div></div></div></div>\n</body>', keyword_name='Select From List By Value', keyword_args=('id:_r_b_', 'Self'), failed_locator='id:_r_b_', tried_locator_memory=[], locator_type='css', file_usage_ctx='*** Settings ***\nLibrary    SeleniumLibrary\nLibrary    SelfhealingAgents\nLibrary    ./fix_loop.py\n\nTest Setup       OpenTheBrowser\nTest Teardown        Close Browser\n\nResource        resource.robot\n\n*** Variables ***\n\n${time}    5 seconds\n${username}    claimantqa@gmail.com\n${password}    Camunda@123\n\n*** Test Cases ***\nAaseyaClaims\n    AISHealtCareLoginPage        ${username}        ${password} \n    RegisterPre-ClaimApproval\n    \n\n\n*** Keywords ***\n\nAISHealtCareLoginPage\n    [arguments]        ${username}        ${password} \n    Maximize browser Window\n    Set selenium implicit wait    ${time}\n    Click Button    Pre-Claim Authorization\n    Input Text    id:_r_6_    ${username}\n    Input Text    id:_r_7_    ${password}\n    Sleep    ${time}\n    Click Button    LOGIN\n    \n    \nRegisterPre-ClaimApproval\n    Sleep    ${time}\n    Input Text    id:_r_a_    John Doe\n    Select From List By Value    id:_r_b_    Self\n    Input Text    id:_r_c_    1321323')), kwargs: {}
+2026-02-12 12:21:15,740 - SelfhealingReports - ERROR - Function run_async raised an exception:
+Traceback (most recent call last):
+  File "D:\EuroControl\.venv\Lib\site-packages\SeleniumLibrary\__init__.py", line 676, in run_keyword
+    return DynamicCore.run_keyword(self, name, args, kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\EuroControl\.venv\Lib\site-packages\robotlibcore\core\dynamic.py", line 25, in run_keyword
+    return self.keywords[name](*args, **(kwargs or {}))
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\EuroControl\.venv\Lib\site-packages\SeleniumLibrary\keywords\selectelement.py", line 251, in select_from_list_by_value
+    select = self._get_select_list(locator)
+  File "D:\EuroControl\.venv\Lib\site-packages\SeleniumLibrary\keywords\selectelement.py", line 372, in _get_select_list
+    el = self.find_element(locator, tag="list")
+  File "D:\EuroControl\.venv\Lib\site-packages\SeleniumLibrary\base\context.py", line 82, in find_element
+    return self.element_finder.find(locator, tag, True, required, parent)
+           ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\EuroControl\.venv\Lib\site-packages\SeleniumLibrary\locators\elementfinder.py", line 93, in find
+    return self._find(locators[-1], tag, first_only, required, element)
+           ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\EuroControl\.venv\Lib\site-packages\SeleniumLibrary\locators\elementfinder.py", line 125, in _find
+    raise ElementNotFound(f"{element_type} with locator '{locator}' not found.")
+SeleniumLibrary.errors.ElementNotFound: List with locator 'id:_r_b_' not found.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\EuroControl\.venv\Lib\site-packages\SelfhealingAgents\utils\logging.py", line 81, in async_wrapper
+    result: Any = await func(*args, **kwargs)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\EuroControl\.venv\Lib\site-packages\SelfhealingAgents\self_healing_system\agents\orchestrator_agent\orchestrator_agent.py", line 77, in run_async
+    response: AgentRunResult = await self._agent.run(
+                               ^^^^^^^^^^^^^^^^^^^^^^
+    ...<4 lines>...
+    )
+    ^
+  File "D:\EuroControl\.venv\Lib\site-packages\pydantic_ai\agent\abstract.py", line 259, in run
+    async with self.iter(
+               ~~~~~~~~~^
+        user_prompt=user_prompt,
+        ^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<11 lines>...
+        builtin_tools=builtin_tools,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ) as agent_run:
+    ^
+  File "C:\Users\kavita.chonkar\AppData\Local\Python\pythoncore-3.14-64\Lib\contextlib.py", line 214, in __aenter__
+    return await anext(self.gen)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\EuroControl\.venv\Lib\site-packages\pydantic_ai\agent\__init__.py", line 722, in iter
+    graph.iter(
+    ~~~~~~~~~~^
+        inputs=user_prompt_node,
+        ^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<3 lines>...
+        infer_name=False,
+        ^^^^^^^^^^^^^^^^^
+    ) as graph_run,
+    ^
+  File "C:\Users\kavita.chonkar\AppData\Local\Python\pythoncore-3.14-64\Lib\contextlib.py", line 214, in __aenter__
+    return await anext(self.gen)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\EuroControl\.venv\Lib\site-packages\pydantic_graph\beta\graph.py", line 270, in iter
+    async with GraphRun[StateT, DepsT, OutputT](
+               ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        graph=self,
+        ^^^^^^^^^^^
+    ...<3 lines>...
+        traceparent=traceparent,
+        ^^^^^^^^^^^^^^^^^^^^^^^^
+    ) as graph_run:
+    ^
+  File "C:\Users\kavita.chonkar\AppData\Local\Python\pythoncore-3.14-64\Lib\typing.py", line 1221, in __call__
+    result = self.__origin__(*args, **kwargs)
+  File "D:\EuroControl\.venv\Lib\site-packages\pydantic_graph\beta\graph.py", line 402, in __init__
+    self._iterator_task_group = create_task_group()
+                                ~~~~~~~~~~~~~~~~~^^
+  File "D:\EuroControl\.venv\Lib\site-packages\anyio\_core\_tasks.py", line 173, in create_task_group
+    return get_async_backend().create_task_group()
+           ~~~~~~~~~~~~~~~~~^^
+  File "D:\EuroControl\.venv\Lib\site-packages\anyio\_core\_eventloop.py", line 189, in get_async_backend
+    raise NoEventLoopError(
+    ...<2 lines>...
+    )
+anyio.NoEventLoopError: Not currently running on any asynchronous event loop. Available async backends: asyncio, trio
+2026-02-12 12:21:15,768 - SelfhealingReports - ERROR - Function kickoff_healing raised an exception:
+Traceback (most recent call last):
+  File "D:\EuroControl\.venv\Lib\site-packages\SeleniumLibrary\__init__.py", line 676, in run_keyword
+    return DynamicCore.run_keyword(self, name, args, kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\EuroControl\.venv\Lib\site-packages\robotlibcore\core\dynamic.py", line 25, in run_keyword
+    return self.keywords[name](*args, **(kwargs or {}))
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\EuroControl\.venv\Lib\site-packages\SeleniumLibrary\keywords\selectelement.py", line 251, in select_from_list_by_value
+    select = self._get_select_list(locator)
+  File "D:\EuroControl\.venv\Lib\site-packages\SeleniumLibrary\keywords\selectelement.py", line 372, in _get_select_list
+    el = self.find_element(locator, tag="list")
+  File "D:\EuroControl\.venv\Lib\site-packages\SeleniumLibrary\base\context.py", line 82, in find_element
+    return self.element_finder.find(locator, tag, True, required, parent)
+           ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\EuroControl\.venv\Lib\site-packages\SeleniumLibrary\locators\elementfinder.py", line 93, in find
+    return self._find(locators[-1], tag, first_only, required, element)
+           ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\EuroControl\.venv\Lib\site-packages\SeleniumLibrary\locators\elementfinder.py", line 125, in _find
+    raise ElementNotFound(f"{element_type} with locator '{locator}' not found.")
+SeleniumLibrary.errors.ElementNotFound: List with locator 'id:_r_b_' not found.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\EuroControl\.venv\Lib\site-packages\SelfhealingAgents\utils\logging.py", line 96, in sync_wrapper
+    result: Any = func(*args, **kwargs)
+                  ~~~~^^^^^^^^^^^^^^^^^
+  File "D:\EuroControl\.venv\Lib\site-packages\SelfhealingAgents\self_healing_system\kickoff_multi_agent_system.py", line 70, in kickoff_healing
+    response = asyncio.get_event_loop().run_until_complete(
+        orchestrator_agent.run_async(robot_ctx_payload)
+    )
+  File "D:\EuroControl\.venv\Lib\site-packages\nest_asyncio.py", line 98, in run_until_complete
+    return f.result()
+           ~~~~~~~~^^
+  File "C:\Users\kavita.chonkar\AppData\Local\Python\pythoncore-3.14-64\Lib\asyncio\futures.py", line 208, in result
+    raise self._exception.with_traceback(self._exception_tb)
+  File "C:\Users\kavita.chonkar\AppData\Local\Python\pythoncore-3.14-64\Lib\asyncio\tasks.py", line 289, in __step_run_and_handle_result
+    result = coro.send(None)
+  File "D:\EuroControl\.venv\Lib\site-packages\SelfhealingAgents\utils\logging.py", line 81, in async_wrapper
+    result: Any = await func(*args, **kwargs)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\EuroControl\.venv\Lib\site-packages\SelfhealingAgents\self_healing_system\agents\orchestrator_agent\orchestrator_agent.py", line 77, in run_async
+    response: AgentRunResult = await self._agent.run(
+                               ^^^^^^^^^^^^^^^^^^^^^^
+    ...<4 lines>...
+    )
+    ^
+  File "D:\EuroControl\.venv\Lib\site-packages\pydantic_ai\agent\abstract.py", line 259, in run
+    async with self.iter(
+               ~~~~~~~~~^
+        user_prompt=user_prompt,
+        ^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<11 lines>...
+        builtin_tools=builtin_tools,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ) as agent_run:
+    ^
+  File "C:\Users\kavita.chonkar\AppData\Local\Python\pythoncore-3.14-64\Lib\contextlib.py", line 214, in __aenter__
+    return await anext(self.gen)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\EuroControl\.venv\Lib\site-packages\pydantic_ai\agent\__init__.py", line 722, in iter
+    graph.iter(
+    ~~~~~~~~~~^
+        inputs=user_prompt_node,
+        ^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<3 lines>...
+        infer_name=False,
+        ^^^^^^^^^^^^^^^^^
+    ) as graph_run,
+    ^
+  File "C:\Users\kavita.chonkar\AppData\Local\Python\pythoncore-3.14-64\Lib\contextlib.py", line 214, in __aenter__
+    return await anext(self.gen)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\EuroControl\.venv\Lib\site-packages\pydantic_graph\beta\graph.py", line 270, in iter
+    async with GraphRun[StateT, DepsT, OutputT](
+               ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        graph=self,
+        ^^^^^^^^^^^
+    ...<3 lines>...
+        traceparent=traceparent,
+        ^^^^^^^^^^^^^^^^^^^^^^^^
+    ) as graph_run:
+    ^
+  File "C:\Users\kavita.chonkar\AppData\Local\Python\pythoncore-3.14-64\Lib\typing.py", line 1221, in __call__
+    result = self.__origin__(*args, **kwargs)
+  File "D:\EuroControl\.venv\Lib\site-packages\pydantic_graph\beta\graph.py", line 402, in __init__
+    self._iterator_task_group = create_task_group()
+                                ~~~~~~~~~~~~~~~~~^^
+  File "D:\EuroControl\.venv\Lib\site-packages\anyio\_core\_tasks.py", line 173, in create_task_group
+    return get_async_backend().create_task_group()
+           ~~~~~~~~~~~~~~~~~^^
+  File "D:\EuroControl\.venv\Lib\site-packages\anyio\_core\_eventloop.py", line 189, in get_async_backend
+    raise NoEventLoopError(
+    ...<2 lines>...
+    )
+anyio.NoEventLoopError: Not currently running on any asynchronous event loop. Available async backends: asyncio, trio
